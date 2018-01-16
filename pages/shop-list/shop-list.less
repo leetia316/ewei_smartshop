@@ -1,0 +1,258 @@
+@fontShop:28rpx;
+@floatCo:left;
+@fontColor:#666666;
+@marginLeft:96rpx;
+page{
+  background-color: #F8F8F8;
+  font-family: "Microsoft YaHei", sans-serif;
+  position: relative;
+}
+scroll-view{
+  height:100%;
+}
+//搜索框
+.search{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:50rpx;
+
+}
+.search wx-image{
+  width:29rpx;
+  height:29rpx;
+  text-align: center;
+  z-index:99;
+  position: absolute;
+  left:238rpx;
+  margin-top:14rpx;
+}
+.search-input{
+  width:90%;
+  border:1rpx solid #f7f7f7;
+  border-radius: 24rpx;
+  text-align: center;
+  background:#f7f7f7;
+}
+.shoplist-tab{
+  height:80rpx;
+  border-bottom: 1rpx solid #e6e6e6;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:space-between;
+}
+.comprehensive{
+  float: @floatCo;
+  font-size: @fontShop;
+  margin-left:@marginLeft;
+}
+.comprehensive text{
+  font-size:@fontShop;
+  color: #ff9c00;
+}
+.sales-volume{
+  float: @floatCo;
+  font-size: @fontShop;
+}
+.sales-volume text{
+  font-size:@fontShop;
+  color: @fontColor;
+}
+.price{
+  float: @floatCo;
+}
+.price text{
+  font-size: @fontShop;
+  color: @fontColor;
+}
+.screen{
+  float: @floatCo;
+  margin-right:@marginLeft;
+}
+.screen text{
+  font-size: @fontShop;
+  color: @fontColor;
+}
+.screen wx-image{
+  width:16.85rpx;
+  height:18.87rpx;
+  margin-left:15rpx;
+  margin-right:-15rpx;
+
+}
+.shoplist-tab view text.actve{
+  color: #ff9c00;
+}
+.shop-list{
+  width:100%;
+  margin-top:10rpx;
+}
+.pr{
+  width: 50%;
+  float: left;
+  background: #fff;
+}
+.photo{
+  width: 352rpx;
+  height: 350rpx;
+}
+.title {
+  color: #40434D;
+  font-size: 28rpx;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.old {
+  font-size:30rpx;
+  text-align: center;
+  text-decoration: line-through;
+  margin-left: -20rpx;
+}
+.new-pri {
+  font-size:30rpx;
+  text-align: center;
+  margin-left: 20rpx;
+}
+.tutu_img{
+  width:100%;
+  text-align:center;
+}
+.tutu_img wx-image{
+  width:40rpx;
+  height:40rpx;
+}
+.tutu_img .no_more{
+  color: #999;
+}
+.priceBorder {
+  display: inline-block;
+  height: 9 rpx;
+  width: 15.46 rpx;
+  box-sizing: border-box;
+
+}
+.priceBorder wx-image{
+  height: 9 rpx;
+  width: 15.46 rpx;
+}
+.price_border{
+  display:inline-block;
+  height:9rpx;
+  width:15.46rpx;
+  box-sizing:border-box;
+
+}
+.price_border wx-image{
+   height:9rpx;
+   width:15.46rpx;
+ }
+.choose{
+  width:100%;
+  flex-direction:row;
+  text-align:center;
+  flex-wrap:wrap;
+  height:295rpx;
+  z-index: 99;
+}
+.recommend{
+  display: inline-block;
+  border:1rpx solid #FF9C00;
+  border-radius: 8rpx;
+  padding:6rpx 45rpx;
+  font-size: 28rpx;
+  color: #FF9C00;
+  margin-top:44rpx;
+}
+.new{
+  display: inline-block;
+  border:1rpx solid #E6E6E6;
+  border-radius: 8rpx;
+  padding:6rpx 45rpx;
+  font-size: 28rpx;
+  color: #666666;
+  margin-left:30rpx;
+}
+.hot{
+  display: inline-block;
+  border:1rpx solid #E6E6E6;
+  border-radius: 8rpx;
+  padding:6rpx 45rpx;
+  font-size: 28rpx;
+  color: #666666;
+  margin-left:30rpx;
+}
+.promotion{
+  display: inline-block;
+  border:1rpx solid #E6E6E6;
+  border-radius: 8rpx;
+  padding:6rpx 45rpx;
+  font-size: 28rpx;
+  color: #666666;
+  margin-top:20rpx;
+}
+.free_shipping{
+  display: inline-block;
+  border:1rpx solid #E6E6E6;
+  border-radius: 8rpx;
+  padding:6rpx 45rpx;
+  font-size: 28rpx;
+  color: #666666;
+  margin-left:30rpx;
+}
+.time_limit{
+  display: inline-block;
+  border:1rpx solid #E6E6E6;
+  border-radius: 8rpx;
+  padding:6rpx 45rpx;
+  font-size: 28rpx;
+  color: #666666;
+  margin-left:30rpx;
+}
+.btn_mark{
+  width:100%;
+  display:block;
+  font-size: 32rpx;
+  color: #666666;
+  border-top:1rpx solid #E6E6E6;
+  margin-top:54rpx;
+  padding-top:16rpx;
+}
+.choose{
+  display: none;
+}
+.choose_show{
+  display: block;
+  width:100%;
+  flex-direction:row;
+  text-align:center;
+  flex-wrap:wrap;
+  height:295rpx;
+  z-index: 99;
+}
+/*遮罩层  */
+.layer_view{
+  width: 100%;
+  height: 740rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  display: none;
+  z-index: 99;
+}
+.layer_show{
+  display: block;
+  width: 100%;
+  height: 848rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  z-index: 99;
+}

@@ -1,0 +1,27 @@
+<!--cart.wxml-->
+<import src="../template/template.wxml"/>
+
+<import src="cart_item_list_template/cart_item_list_template" />
+<view class="cartContainer">
+  <view class="cartContentWrap">
+    <view class="cartHint">已满足满¥ 188.00元免邮费</view>
+    <template is="cartItemListTemplate"></template>
+    <view class="noMore">没有更多了</view>
+    <view class="buyHandleArea">
+      <view class="left">
+        <icon type="success" color="#D0D0D0" size="15"></icon>
+        <text class="chooseAll">全选</text>
+      </view>
+      <view class="right">
+          <text class="payMoney">¥507.00</text>
+          <button class="toPayBtn">下单</button>
+      </view>
+    </view>
+  </view>
+  <view  class="noContentWrap" wx:if="">
+    <image class="noContentImg" src="/images/cart/cart.png"></image>
+    <text class="noContentText">购物车空空哒</text>
+    <button class="lookAround">到处逛逛</button>
+  </view>
+</view>
+<template wx:if="{{!userGetSetting}}" is="unauth"></template>

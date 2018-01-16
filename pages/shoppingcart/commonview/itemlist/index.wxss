@@ -1,0 +1,167 @@
+/*根容器  */
+
+.viewholder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* background-color: #ffffff; */
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+/*没过期的数据  */
+
+.viewholder .cartItemListWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #fff;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.cartItemListWrap .cartShopTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-left: 3px solid #ff9c00;
+  border-bottom: 1rpx solid #E6E6E6;
+  /* justify-content: center; *//*子元素两端对齐  */
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  /*子元素垂直对齐  */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.cartShopTitle .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex: 1;
+  margin-left: 12px;
+  /*子元素垂直对齐  */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.left .success {
+  color: #ff9c00;
+  background-color: #089;
+}
+
+.left .shopName {
+  color: #ff9c00;
+  font-size: 12px;
+}
+
+.cartShopTitle .getCoupon {
+  color: #ff9c00;
+  font-size: 12px;
+  margin-right: 24rpx;
+}
+
+/*失效商品的显示  */
+
+.viewholder .disabledCartListWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #fff;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  /* margin-bottom: 20px; */
+}
+
+/*顶部标题容器  */
+
+.disabledCartListWrap .disabledCartTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-left: 3px solid #ccc;
+  border-bottom: 1rpx solid #E6E6E6;
+  /*子元素两端对齐  */
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  /*子元素垂直对齐  */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/*左边容器  */
+
+.disabledCartTitle .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 8px;
+  /*子元素垂直对齐  */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.left .circle {
+  display: inline-block;
+  width: 30rpx;
+  height: 30rpx;
+  border: 1rpx solid #d0d0d0;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.left .shopName {
+  color: #666;
+  font-size: 14px;
+  margin-left: 12px;
+}
+
+/*右边容器  */
+
+.disabledCartTitle .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /*子元素垂直对齐  */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.right .clearIcon {
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+}
+
+.right .cleartext {
+  color: #666;
+  font-size: 12px;
+  margin-right: 24rpx;
+}
+@import '../itemgoods/index.wxss';

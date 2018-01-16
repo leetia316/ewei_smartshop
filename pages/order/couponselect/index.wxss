@@ -1,0 +1,88 @@
+/* pages/order/couponselect/index.wxss */
+
+/* index.wxss */
+@import '../commonview/itemcoupon/index.wxss';
+
+.holder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /* 盒模型垂直布局 */
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  /* 子元素水平居中 */
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.holder .emptyview {
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  width: 100%;
+  height: 50px;
+  margin-top: 12px;
+  margin-bottom: 50px;
+  align-self: center;
+  justify-content: center;
+}
+
+.emptyview .textview {
+  font-size: 16px;
+  color: #999;
+}
+
+.holder .buttoncoupon {
+  position: fixed;
+  bottom: 0rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  /* 子元素水平居中 */
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  /*  子元素垂直居中*/
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.buttoncoupon .coupontext {
+  font-size: 16px;
+  color: #666;
+}
+
+/*无数据时的样式  */
+.holder .noContentWrap {
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+}
+
+.noContentWrap .noContentImg {
+  margin-bottom: 70rpx;
+}
+
+.noContentWrap .noContentText {
+  color: #999;
+  font-size: 15px;
+}

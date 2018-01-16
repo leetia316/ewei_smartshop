@@ -1,0 +1,366 @@
+@import "order_detail_list_template/order_detail_list_template.less";
+.orderDetailContainer{
+  position: relative;
+  padding-bottom: 98rpx;
+  >view{
+    background-color: #fff;
+    margin-bottom: 20rpx;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  .bannerDetailStep{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-justify-content: space-between;
+    padding: 26rpx 34rpx 28rpx 32rpx;
+    background-color: @strongOrangeColor;
+    box-sizing: border-box;
+    .detailStepInfo,text{
+      font-size: 32rpx;
+      line-height: 45rpx;
+      color: @whiteColor;
+      .infoStep{
+        margin-top: 7rpx;
+        margin-bottom: 25rpx;
+      }
+      .infoMoney{
+        .money{
+          margin-left: 10rpx;
+        }
+      }
+    }
+    .detailStepImgArea{
+      position: relative;
+      .stepImg{
+        height: 135rpx;
+        width: 135rpx;
+      }
+      .imgText{
+        position: absolute;
+        left: 7rpx;
+        top: 38rpx;
+        width: 90rpx;
+        height: 80rpx;
+        line-height: 80rpx;
+        text-align: center;
+        font-size: 20rpx;
+        color: #FF7E4C;
+        font-weight:bold;
+      }
+    }
+  }
+  .colorLine{
+    display:block;
+    width: 100%;
+    height: 4rpx;
+  }
+  .deliveryInfo{
+    box-sizing: border-box;
+    padding: 26rpx 20rpx 20rpx 25rpx;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-box-flex: row;
+        -ms-flex: row;
+            flex: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-justify-content: space-between;
+    .left{
+      .companyName,.deliverySn{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        display: -webkit-flex;
+        &.companyName{
+          margin-bottom:20rpx;
+        }
+        .title{
+          margin-right: 30rpx;
+          width: 132rpx;
+        }
+        .deliveryDel{
+          font-size: 32rpx;
+          word-break:break-all;
+          width:500rpx;
+          display:inline-block;
+        }
+      }
+    }
+    .rightArrow{
+      .rightArrow(#D0D0D0,18rpx,5rpx);
+      margin-top: 40rpx;
+    }
+  }
+  .clientInfo{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-justify-content: space-between;
+    background-color: #fff;
+    .nameTel{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      display: -webkit-flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+              -webkit-justify-content: space-between;
+      padding-left: 82rpx;
+      padding-right: 26rpx;
+      margin-top: 30rpx;
+      margin-bottom: 18rpx;
+    }
+    .address{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      display: -webkit-flex;
+      padding: 0 24rpx 22rpx 22rpx;
+      .addressIcon{
+        width: 38rpx;
+        height: 38rpx;
+        margin-right: 18rpx;
+        margin-top: 8rpx;
+      }
+      .addressText{
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+        font-size: 30rpx;
+        line-height: 58rpx;
+        color: @titleFontColor;
+      }
+    }
+  }
+  .goodsSubtotal{
+    .goodsTotal{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      display: -webkit-flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+              -webkit-justify-content: space-between;
+      height: 98rpx;
+      border-bottom: @line;
+      box-sizing: border-box;
+      padding: 0 24rpx;
+      .title{
+        line-height: 98rpx;
+      }
+    }
+    .goodsItemWrap{
+      padding: 0 24rpx;
+      box-sizing: border-box;
+      border-bottom: @line;
+      .goodsItem{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        display: -webkit-flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+                -webkit-justify-content: space-between;
+        height: 80rpx;
+        line-height: 80rpx;
+        border-bottom: @line;
+        &:last-child{
+          border-bottom: none;
+        }
+        text{
+          font-size: 28rpx;
+          color: @subFontColor;
+        }
+      }
+    }
+    .goodsPay{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      display: -webkit-flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+      -webkit-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: end;
+          -ms-flex-align: end;
+              align-items: flex-end;
+              -webkit-align-items: flex-end;
+      padding: 16rpx 24rpx;
+      box-sizing: border-box;
+      .hasFreight{
+        font-size: 26rpx;
+        line-height: 37rpx;
+        color: @subFontColor;
+        margin-bottom: 14rpx;
+      }
+      .actualPay{
+        text{
+          font-size: 32rpx;
+          color: #FA6464;
+        }
+      }
+    }
+  }
+  .orderTimeInfo{
+    .timeItem{
+      height: 98rpx;
+      line-height: 98rpx;
+      padding: 0 24rpx;
+      border-bottom: 1rpx solid #E6E9F0;
+      box-sizing: border-box;
+      &:last-child{
+        border-bottom: none;
+      }
+      text{
+        font-size: 28rpx;
+        color: @subFontColor;
+        &:first-child{
+          margin-right: 20rpx;
+        }
+      }
+    }
+  }
+  .handleButtons{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 98rpx;
+    line-height: 98rpx;
+    padding: 0 25rpx;
+    box-sizing: border-box;
+    margin-bottom:0;
+    .totalMoney{
+      font-size: 34rpx;
+      color: #FA6464;
+    }
+    .buttonsWrap{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      display: -webkit-flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+              -webkit-align-items: center;
+      justify-content:flex-end;
+      -webkit-justify-content:flex-end;
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      -webkit-flex: 1;
+      >button{
+        font-size: 28rpx;
+        border-radius: 6rpx;
+        width: 160rpx;
+        height: 70rpx;
+        padding: 0;
+        &:after{
+          border: none;
+        }
+      }
+      .canleBtn{
+        color: @fontColor;
+        border: 1px solid @fontColor;
+        margin-right: 20rpx;
+        box-sizing: border-box;
+      }
+      .payBtn{
+        background-color: @strongOrangeColor;
+        color: #fff;
+      }
+      .sureBtn{
+        color: @strongOrangeColor;
+        border: 1px solid @strongOrangeColor;
+        box-sizing: border-box;
+      }
+    }
+  }
+  .reasonModelArea{
+    .mask {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background-color: rgba(0,0,0,.5);
+      overflow: hidden;
+      color: #fff;
+    }
+    .reasonModel{
+      width: 100%;
+      overflow: hidden;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 2000;
+      background: #fff;
+      padding-top: 20rpx;
+      .btns{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        display: -webkit-flex;
+        padding: 0 30rpx;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+                -webkit-justify-content: space-between;
+        height: 108rpx;
+        line-height: 108rpx;
+        .btn{
+          width: 84rpx;
+          font-size: 36rpx;
+          color: @titleFontColor;
+          &.sureBtn{
+            color: @strongOrangeColor;
+          }
+          &.noTapSureBtn{
+            color: @subFontColor;
+          }
+        }
+      }
+      .reasons{
+        view{
+          font-size: 32rpx;
+          color:@titleFontColor;
+          line-height: 98rpx;
+          border-top: @line;
+          text-align: center;
+          &.blue{
+            color: #8399FF;
+          }
+        }
+      }
+    }
+  }
+}

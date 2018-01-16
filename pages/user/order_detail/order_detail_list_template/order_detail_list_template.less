@@ -1,0 +1,125 @@
+@import "../../order_item_template/order_item_template.less";
+.orderDetailListWrap{
+  background-color: @whiteColor;
+  padding-bottom: 20rpx;
+  .upLoadInfoArea{
+    background-color: #FAFAFA;
+    .upLoadInfoTitle{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      display: -webkit-flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+      -webkit-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end;
+              -webkit-justify-content: flex-end;
+      height: 80rpx;
+      line-height: 80rpx;
+      box-sizing: border-box;
+      padding-right: 26rpx;
+      .upTitle{
+        font-size: 24rpx;
+        color: @titleFontColor;
+        margin-right: 10rpx;
+      }
+      .arrowArr{
+        -webkit-box-flex:0;
+            -ms-flex:0;
+                flex:0;
+        margin-top: -2rpx;
+        margin-left: 6rpx;
+      }
+      .downArrowArr{
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+                flex-direction: column;
+        .arrow{
+          .downArrow(#7c9fff,12rpx,2rpx);
+          margin-top: -2px;
+        }
+      }
+      .upArrowArr{
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+                flex-direction: column;
+        .arrow{
+          .upArrow(#7c9fff,12rpx,2rpx);
+          margin-bottom: -2px;
+        }
+      }
+    }
+    .upLoadInfo{
+        padding: 0 45rpx;
+        border-top: @line;
+        .infoItem{
+          border-bottom: @line;
+          &:last-child{
+            border-bottom: none;
+          }
+          text{
+            font-size: 26rpx;
+            color: @titleFontColor;
+            display: inline-block;
+          }
+          .infoItemTitle,.infoItemText{
+            line-height: 58rpx;
+            padding:11rpx 0;
+            box-sizing: border-box;
+            vertical-align:top;
+            text{
+              margin-right: 10rpx;
+            }
+          }
+          .infoItemTitle{
+            text-align: justify;
+            width: 130rpx;
+            margin-right: 17rpx;
+            height:80rpx;
+            &:after{
+              display:inline-block;
+              overflow:hidden;
+              width:100%;
+              height:0;
+              content:'';
+            }
+          }
+          .infoItemText{
+            width: 516rpx;
+          }
+        }
+      .imgArea{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        display: -webkit-flex;
+        line-height: 80rpx;
+        padding: 20rpx 0;
+        .imgText{
+          font-size: 26rpx;
+          color: @titleFontColor;
+          margin-right: 68rpx;
+        }
+        .imgWrap{
+          image{
+            height: 80rpx;
+            width: 80rpx;
+            margin-right: 35rpx;
+          }
+        }
+      }
+    }
+  }
+}

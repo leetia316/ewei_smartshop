@@ -1,0 +1,15 @@
+<template name="tabitem">
+
+  <view class='holder'bindtap="itemchoose" data-index="{{item.id}}" >
+  <view  wx:if="{{item.showStatus == 0}}">
+   <text class='graytext'>{{item.title}}</text>
+  </view>
+  <view  wx:else>
+   <text class='colortext'>{{item.title}}</text>
+  </view>
+   
+   
+    <image wx:if='{{item.image != "" }}' src='{{item.image}}' class='image'></image>
+  </view>
+
+</template>

@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<template name="selectaddress">
+  <view class="pickerholder">
+    <view class="cityheader">
+        <view bindtap="openModal" class="citycancel">取消</view>
+        <view bindtap="openModal" class="citytrue">确定</view>
+      </view>
+    <picker-view indicator-style="line-height: 200rpx; " style="width: 100%; height: 500rpx; background-color: #ffffff;" value="{{value}}" bindchange="bindChange" class="citybody">
+    
+      <picker-view-column style="line-height: 200rpx">
+        <view wx:for="{{provinces}}" wx:key="item" value="{{value[0]}}" class="pickeritem">{{item}}</view>
+      </picker-view-column>
+      <picker-view-column style="line-height: 200rpx;">
+        <view wx:for="{{citys}}" wx:key="item" value="{{value[1]}}" class="pickeritem">{{item}}</view>
+      </picker-view-column>
+      <picker-view-column style="line-height: 200rpx">
+        <view wx:for="{{countys}}" wx:key="item" value="{{value[2]}}" class="pickeritem">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</template>

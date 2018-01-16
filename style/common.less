@@ -1,0 +1,155 @@
+/*基本色*/
+//重要
+@strongOrangeColor:#ff9c00;
+@titleFontColor:#333333;
+@backColor:#f6f6f6;
+//一般
+@fontColor:#666666;
+@subFontColor:#999999;
+@whiteColor:#ffffff;
+//
+@borderColor:#d9d9d9;
+@lineColor:#e6e6e6;
+
+@orangeColor:#ff9c00;
+@redColor:#fa6464;
+@line:1rpx solid #E6E9F0;
+  /*title 样式*/
+.title{
+  font-size: 32rpx;
+  color: @titleFontColor;
+  line-height: 45rpx;
+}
+/*像user那一条一条的带图片右箭头的item*/
+.user_item{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+          -webkit-justify-content: space-between;
+  height: 98rpx;
+  line-height: 98rpx;
+  padding-left: 25rpx;
+  padding-right: 20rpx;
+  background-color: @whiteColor;
+  box-sizing: border-box;
+  .left{
+    image{
+      width: 42rpx;
+      height: 42rpx;
+      margin-right: 19rpx;
+      vertical-align:top;
+      margin-top:28rpx;
+
+    }
+  }
+  .rightArrow{
+    .rightArrow(#C7C7CC,18rpx,5rpx);
+    margin-top: 40rpx;
+  }
+}
+/*按钮*/
+.buttonsWrap{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+          -webkit-align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+          -webkit-justify-content: flex-end;
+  >button{
+    font-size: 28rpx;
+    border-radius: 6rpx;
+    width: 160rpx;
+    height: 70rpx;
+    padding: 0;
+    margin: 0;
+    &:after{
+      border: none;
+    }
+  }
+  .canleBtn{
+    color: @fontColor;
+    border: 1px solid @fontColor;
+    margin-right: 20rpx;
+    box-sizing: border-box;
+  }
+  .payBtn{
+    background-color: @strongOrangeColor;
+    color: #fff;
+  }
+  .sureBtn{
+    color: @strongOrangeColor;
+    border: 1px solid @strongOrangeColor;
+    box-sizing: border-box;
+  }
+}
+/*没有更多*/
+.noMore{
+  font-size: 24rpx;
+  color: @subFontColor;
+  text-align: center ;
+}
+/*右箭头*/
+.rightArrow(@arrowColor,@arrowScale,@arrowBold){
+  display: inline-block;
+  height: @arrowScale;
+  width: @arrowScale;
+  box-sizing: border-box;
+  border-right: @arrowBold solid @arrowColor;
+  border-top: @arrowBold solid @arrowColor;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.arrowArr{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+          -webkit-justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+          -webkit-align-items: center;
+}
+/*下箭头*/
+.downArrow(@arrowColor,@arrowScale,@arrowBold){
+  display: inline-block;
+  height: @arrowScale;
+  width: @arrowScale;
+  box-sizing: border-box;
+  border-left: @arrowBold solid @arrowColor;
+  border-bottom: @arrowBold solid @arrowColor;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+/*上箭头*/
+.upArrow(@arrowColor,@arrowScale,@arrowBold){
+  display: inline-block;
+  height: @arrowScale;
+  width: @arrowScale;
+  box-sizing: border-box;
+  border-left: @arrowBold solid @arrowColor;
+  border-top: @arrowBold solid @arrowColor;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/*省略号*/
+.ellipsis{
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}

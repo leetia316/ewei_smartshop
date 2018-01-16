@@ -1,0 +1,199 @@
+.itemcoupon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /*  盒模型垂直布局*/
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.itemcoupon .itemholder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  margin-left: 12px;
+  margin-right: 12px;
+   /* height: 180rpx;  */
+  margin-top: 12px;
+  align-items: center;
+  background-color: #fff;
+}
+
+/*优惠券左边的图标  */
+.itemholder .iconHolder {
+  width: 186rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /* 子元素水平居中 */
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  /*  子元素垂直居中*/
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/*icon图标  */
+.iconHolder .couponicon {
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+}
+
+/*优惠券中间内容的容器  */
+.itemholder .centre {
+  width: 380rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /* 盒模型垂直布局 */
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  /*  子元素水平居中*/
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.itemholder .dottedLine {
+  height: 180rpx;
+  width: 9px;
+  /* background: #009988; */
+}
+
+/*右侧选取的图标  */
+.itemholder .rightholder {
+  width: 105rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /* 子元素水平居中 */
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  /*  子元素垂直居中*/
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.rightholder .righticon {
+  width: 22px;
+  height: 22px;
+  padding: 10px;
+  margin-left: 6px;
+}
+
+/*中间的内容小控件  */
+
+.centre .title {
+  color: #40434d;
+  font-size: 15px;
+  margin-top: 20rpx;
+}
+
+.centre .content {
+  color: #757a89;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.centre .time {
+  color: #999;
+  font-size: 11px;
+  margin-top: 10px;
+  margin-bottom: 20rpx;
+}
+
+/*优惠券的更多说明  */
+
+.itemcoupon .remarkholder {
+   display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex: 1;
+  /*两端对齐  */
+  -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 12px;
+  background-color: #fafafc;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.remarkholder .textholder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 85%;
+  /*子元素垂直居中  */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/*文字少的时候  一行 显示带点 */
+
+.textholder .textone {
+  color: #999;
+  font-size: 12px;
+  /* 超出一行文字自动隐藏  */
+  overflow: hidden;
+  /* 文字隐藏后添加省略号 */
+  text-overflow: ellipsis;
+  /* 强制不换行    */
+  white-space: nowrap;
+}
+
+/*文字更多的时候  */
+
+.textholder .textmore {
+  color: #999;
+  font-size: 12px;
+}
+
+.remarkholder .iconholder {
+  /*flex 布局  */
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex: 0 0 10%;
+  /*子元素水平居中  */
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+    margin-right: 10px;  
+    margin-top: 5px;
+}
+
+.iconholder .icon {
+  width: 10px;
+  height: 10px;
+}

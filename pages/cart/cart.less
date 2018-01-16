@@ -1,0 +1,66 @@
+@import "cart_item_list_template/cart_item_list_template.less";
+.cartContainer{
+  background-color: #fff;
+  height: 100%;
+  .cartContentWrap{
+    .cartHint{
+      height: 70rpx;
+      line-height: 70rpx;
+      padding: 0 24rpx;
+      background-color: #FFF8E9;
+      color: @strongOrangeColor;
+      font-size: 28rpx;
+    }
+    .noMore{
+      height: 70rpx;
+      line-height: 70rpx;
+    }
+    .buyHandleArea{
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 98rpx;
+      line-height: 98rpx;
+      display: flex;
+      justify-content: space-between;
+      padding-left: 24rpx;
+      box-sizing: border-box;
+      .left{
+        icon{
+          margin-right: 24rpx;
+          vertical-align: top;
+          margin-top: 20rpx;
+        }
+        .chooseAll{
+          font-size: 28rpx;
+          color: @subFontColor;
+        }
+      }
+      .right{
+        display: flex;
+        .payMoney{
+          font-size: 32rpx;
+          color: #FA6464;
+          margin-right: 24rpx;
+        }
+        .toPayBtn{
+          width: 260rpx;
+          height: 100%;
+          background-color: @strongOrangeColor;
+          color: @whiteColor;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+  .noContentWrap {
+    margin-top: 250rpx;
+    .noContentImg {
+      margin-bottom: 30rpx;
+    }
+    .noContentText{
+      margin-bottom: 120rpx;
+    }
+  }
+}
+

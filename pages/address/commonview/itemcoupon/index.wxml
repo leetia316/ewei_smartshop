@@ -1,0 +1,22 @@
+<template name="itemaddress">
+
+  <view wx:for="{{addressList}}" wx:for-index="idx" wx:for-item="itemName" wx:key="{{key}}">
+    <view class="addressholder">
+ <view class="right">
+        <image class="righticon" src="../../../images/common/arrow_right.png"></image>
+      </view>
+
+      <view class="content">
+        <view>
+          <text>{{itemName.name}}</text>
+          <text>{{itemName.phone}}</text>
+        </view>
+        <text>{{itemName.title}}</text>
+      </view>
+     
+      <view class="left">
+        <image class="righticon" src="../../../images/order/icon_distance.png"></image>
+      </view>
+    </view>
+  </view>
+</template>

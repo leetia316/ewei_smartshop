@@ -1,0 +1,24 @@
+<template name="cartItemTemplate">
+    <view class="cartItemWrap" class="{{disabled ? 'disabled cartItemWrap':'cartItemWrap'}}"><!--判断失效  disabled-->
+        <icon type="success" size="15" color="#ff9c00" wx:if="{{}}"/><!--选中，未选中，失效三个状态-->
+        <text class="circle" wx:if="{{disabled}}"></text>
+        <view class="cartItemContent">
+            <view class="cartItemImgWrap">
+                <image class="cartItemImg" src="/images/user/order.png" mode="aspectFit"></image>
+                <text class="outUse">已失效</text>
+                <view class="mask"></view>
+            </view>
+            <view class="cartItemInfo">
+                <view class="cartItemTitle ellipsis">天然宽蔑头青沙发回复卡计时器碳化木箱</view>
+                <!--多行省略，一行17.7个字-->
+                <view class="cartItemDesc">棕红色；普通标准；头等皮；体用专用棕红色；普通标准；头等皮；体用专用</view>
+                <view class="cartItemMoney">¥ 321.26</view>
+            </view>
+            <view class="numControl">
+                <image class="plusImg" src="/images/cart/plus.png" mode="aspectFit"></image>
+                <text class="num">2</text>
+                <image class="minusImg" src="/images/cart/minus.png" mode="aspectFit"></image>
+            </view>
+        </view>
+    </view>
+</template>

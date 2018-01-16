@@ -1,0 +1,14 @@
+<!--pages/user/get_coupon/get_coupon.wxml-->
+<import src="get_coupon_item_template/get_coupon_item_template.wxml" />
+<view class="getCouponContainer">
+  <view class="getCouponContentWrap" wx:if="{{dataBackFlag && couponList.length != 0}}">
+    <block wx:for="{{couponList}}" wx:for-item="coupon" wx:key="couponid">
+      <template is="getCouponItemTemplate" data="{{...coupon}}"></template>
+    </block>
+    <view class="noMore" wx:if="{{showNoMore}}">没有更多优惠券了</view>
+  </view>
+  <view class="noContentWrap" wx:if="{{dataBackFlag && couponList.length == 0}}">
+    <image class="noContentImg" src="/images/user/order.png"></image>
+    <text class="noContentText">还没有发布优惠券</text>
+  </view>
+</view>

@@ -1,0 +1,31 @@
+.holder .addressholder {
+  display:flex;
+   display: -webkit-box;
+  display: -webkit-flex;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.addressholder .content{
+  /* height:1000px; */
+
+  /* 
+  横向中间内容区自适应，即使未指定宽度，但会分配宽度 
+  块级元素未主动设置宽度或未被子元素撑起宽度，浏览器默认为块级元素分配宽度为可使用的全部宽度，比如全屏宽。*/
+  flex:1;
+}
+
+.addressholder .right{
+  flex:0 0 40px;/* 左右两列固定宽 */
+}
+
+.addressholder .left{
+  flex:0 0 40px;/* 左右两列固定宽 */
+  order:-1;/* 让left居于左侧 */
+}
+
+.addressholder .righticon{
+  height: 30px;
+  width: 30px;
+}

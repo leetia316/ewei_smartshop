@@ -1,0 +1,81 @@
+<template name="itemgoods">
+ 
+  <view wx:for="{{datalist}}" wx:for-item="item" wx:key="{{index}}" >
+    <view wx:if="{{!isExpire}}" class="itemholder" >  
+      <view class="slideholder" style="{{item.txtStyle}}">
+        <view class="cartItemContent"  data-index="{{index}}" id="{{position}}"  bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" >
+          <view class='circleholder'>
+            <image class="circle" wx:if="{{item.selected ==1}}" src='/images/common/checked_small.png' data-index="{{index}}" id="{{position}}" bindtap="checkedOne"></image>
+            <image  wx:else class="circle" src='/images/common/checked_not_small.png'  data-index="{{index}}" id="{{position}}" bindtap="checkedOne"></image>
+          </view>
+          <view class="cartItemImgWrap"  data-index="{{index}}" id="{{position}}" bindtap="jumpToGoodsDetail">
+            <image class="cartItemImg" src="{{item.thumb}}" mode="scaleToFill"></image>
+          </view>
+          <view class="cartItemInfo" data-index="{{index}}" id="{{position}}" bindtap="jumpToGoodsDetail">
+            <view class="cartItemTitle ellipsis">{{item.title}}</view>
+            <view  wx:if="{{ item.optionid != 0  && item.optiontitle != null}}"  class="cartItemDesc">{{item.optiontitle}}</view>
+            <view  wx:else  class="cartItemDescNone">{{}}</view>
+            <view class="cartItemMoney">{{item.marketprice}}</view>
+          </view>
+          <view class="numControl">
+            <view class="plusImgHolder"  data-index="{{index}}" id="{{position}}" bindtap="plusSymbol">
+              <image class="plusImg" src="{{item.plusicon}}" mode="aspectFit"></image>
+            </view>
+            <view class="numholder">
+              <text class="num">{{item.total}}</text>
+            </view>
+            <view class="minusImgHolder" data-index="{{index}}" id="{{position}}" bindtap="subtractSymbol">
+              <image class="minusImg" src="{{item.subtracticon}}" mode="aspectFit" ></image>
+             </view>
+          </view>
+        </view>
+        <view class="deleteholder" data-index="{{index}}" id="{{position}}" bindtap="delItem">
+          <image class="deleteimage" src="/images/cart/delete_bg.png" mode="scaleToFill"></image>
+        </view>
+      </view>
+      <block wx:if="{{datalist.length-1 != index}}">
+        <!-- <view wx:if="{{index%2==0}}" class='lineStyle'/>  -->
+         <view class='lineStyle'/>  
+      </block>
+    </view>
+    <view wx:else class="itemholder">
+      <view class="expireListHolder">
+        <view class="expirecircleholder">
+          <text class="circle"/>
+        </view>
+        <view class="goodsImageHolder">
+            <image class="cartItemImg" src="{{item.thumb}}"  mode="scaleToFill"></image>  
+          <text class="outUse">已失效</text>
+           <view class="mask"></view> 
+        </view>
+        <view class="descripHolder">
+          <view class="cartItemTitle ellipsis">{{item.title}}</view>
+          <view wx:if="{{ item.optionid != 0 && item.optiontitle != null}}" >
+            <view class="cartItemDesc">{{item.optiontitle}}</view>
+          </view> 
+          <view wx:else >
+            <view class="cartItemDescNone">{{}}</view>
+          </view> 
+          <view class="cartItemMoney">{{item.marketprice}}</view>
+        </view>
+        <!-- <view class="numControl">
+          <text class="num">{{item.total}}</text>
+        </view> -->
+
+        <view class="numControl">
+            <view class="plusImgHolder">
+              <image class="plusImg" src="/images/cart/plus_shallow.png" mode="aspectFit"></image>
+            </view>
+            <view class="numholder">
+              <text class="numn">{{item.total}}</text>
+            </view>
+            <view class="minusImgHolder">
+              <image class="minusImg" src="/images/cart/minus_shallow.png" mode="aspectFit"></image>
+             </view>
+          </view>
+      </view>
+       <view wx:if="{{datalist.length-1 != index}}" class='lineStyle'/>
+    </view>
+  </view>
+
+</template>

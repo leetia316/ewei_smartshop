@@ -1,0 +1,42 @@
+<template name="myCouponItemTemplate">
+    <view class="couponItemWrap" >
+        <view class="couponItemContent">
+            <image class="couponItemImg" src="{{thumb}}"></image>
+            <view class="couponInfo">
+                <view class="title">{{couponname}}</view>
+                <view class="desc">
+                    <!--立减-->
+                    <block wx:if="{{backtype == 0}}">
+                        <text>立减{{deduct}}元</text>
+                    </block>
+                    <!--打折-->
+                    <block wx:if="{{backtype == 1}}">
+                        <text>{{discount}}折</text>
+                    </block>
+                    <!--返利-->
+                    <block wx:if="{{backtype == 2}}">
+                        <text wx:if="{{backmoney > 0}}">送{{backmoney}}元余额</text>
+                        <text wx:if="{{backcredit > 0}}">送{{backcredit}}积分</text>
+                        <text wx:if="{{backredpack > 0}}">送{{backredpack}}元现金</text>
+                    </block>
+                    <text wx:if="{{enough > 0}}">满{{enough}}元可用</text>
+                    <text wx:else>无金额门槛</text>
+                </view>
+                <view class="deadline">
+                    <block wx:if="{{timestr==''}}">永久有效</block>
+                    <block wx:else>有效期{{timestr}}</block>
+                </view>
+            </view>
+            <image class="dottedLine" src="/images/user/dotted.png"></image>
+            <view class="useNow" data-couponid="{{couponid}}" catchtap='toGetCouponTap'>立即使用</view>
+        </view>
+        <view  class="useRange" wx:if="{{limit_text}}">
+            <text class="useRangeText" wx:if="{{toggle}}">{{limit_ellipsis_text}}</text>
+            <text class="useRangeText" wx:else>{{limit_text}}</text>
+            <view wx:if="{{enoughLongText}}" class="{{toggle?'downArrowArr arrowArr':'upArrowArr arrowArr'}}" catchtap="onDesToggleTap" data-id="{{id}}">
+                <text class="arrow"></text>
+                <text class="arrow"></text>
+            </view>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,208 @@
+@import "../template/template.wxss";
+/*基本色*/
+/*title 样式*/
+.title {
+  font-size: 32rpx;
+  color: #333333;
+  line-height: 45rpx;
+}
+/*像user那一条一条的带图片右箭头的item*/
+.user_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  height: 98rpx;
+  line-height: 98rpx;
+  padding-left: 25rpx;
+  padding-right: 20rpx;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+.user_item .left image {
+  width: 42rpx;
+  height: 42rpx;
+  margin-right: 19rpx;
+  vertical-align: top;
+  margin-top: 28rpx;
+}
+.user_item .rightArrow {
+  display: inline-block;
+  height: 18rpx;
+  width: 18rpx;
+  box-sizing: border-box;
+  border-right: 5rpx solid #C7C7CC;
+  border-top: 5rpx solid #C7C7CC;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-top: 40rpx;
+}
+/*按钮*/
+.buttonsWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
+}
+.buttonsWrap > button {
+  font-size: 28rpx;
+  border-radius: 6rpx;
+  width: 160rpx;
+  height: 70rpx;
+  padding: 0;
+  margin: 0;
+}
+.buttonsWrap > button:after {
+  border: none;
+}
+.buttonsWrap .canleBtn {
+  color: #666666;
+  border: 1px solid #666666;
+  margin-right: 20rpx;
+  box-sizing: border-box;
+}
+.buttonsWrap .payBtn {
+  background-color: #ff9c00;
+  color: #fff;
+}
+.buttonsWrap .sureBtn {
+  color: #ff9c00;
+  border: 1px solid #ff9c00;
+  box-sizing: border-box;
+}
+/*没有更多*/
+.noMore {
+  font-size: 24rpx;
+  color: #999999;
+  text-align: center ;
+}
+/*右箭头*/
+.arrowArr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-items: center;
+}
+/*下箭头*/
+/*上箭头*/
+/*省略号*/
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.userContainer .userBanner {
+  position: relative;
+  background-color: #ffffff;
+}
+.userContainer .userBanner .bannerBgImg {
+  width: 100%;
+  height: 320rpx;
+}
+.userContainer .userBanner .userInfo {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-items: center;
+}
+.userContainer .userBanner .userInfo .avatar {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin-top: 24rpx;
+  margin-bottom: 34rpx;
+  box-shadow: 0 0 0 6rpx #fff, 0 0 0 14rpx rgba(255, 131, 0, 0.3);
+}
+.userContainer .userBanner .userInfo .nickname {
+  font-size: 34rpx;
+  line-height: 48rpx;
+}
+.userContainer .userPropertyInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 120rpx;
+  padding-top: 6px;
+  margin-bottom: 20rpx;
+  background-color: #ffffff;
+}
+.userContainer .userPropertyInfo .separateLine {
+  border-left: 2px solid #E6E9F0;
+  height: 60rpx;
+  margin-top: 15rpx;
+}
+.userContainer .userPropertyInfo .yuEe,
+.userContainer .userPropertyInfo .jiFen {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: center;
+}
+.userContainer .userPropertyInfo .yuEe .title,
+.userContainer .userPropertyInfo .jiFen .title {
+  margin-bottom: 2rpx;
+}
+.userContainer .userPropertyInfo .yuEe .num,
+.userContainer .userPropertyInfo .jiFen .num {
+  font-size: 36rpx;
+  line-height: 50rpx;
+}
+.userContainer .userPropertyInfo .yuEe .num.red,
+.userContainer .userPropertyInfo .jiFen .num.red {
+  color: #FA6464;
+}
+.userContainer .userPropertyInfo .yuEe .num.blue,
+.userContainer .userPropertyInfo .jiFen .num.blue {
+  color: #7A91FF;
+}
+.userContainer .user_item {
+  border-bottom: 1px solid #E6E9F0;
+  border-bottom: 1rpx solid #E6E9F0;
+}
+.userContainer .user_item:last-child {
+  border-bottom: none;
+}
+.userContainer .user_item.user_myOrder {
+  margin-bottom: 20rpx;
+  border-bottom: none;
+}
+.userContainer .user_item.user_myOrder .right text {
+  font-size: 28rpx;
+  color: #999999;
+  margin-right: 9rpx;
+}

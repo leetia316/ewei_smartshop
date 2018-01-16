@@ -1,0 +1,53 @@
+<template name="getCouponItemTemplate">
+  <view class="couponItemWrap">
+    <view class="couponItemContent">
+      <image class="couponItemImg" src="{{thumb}}"></image>
+      <view class="couponInfo">
+        <view class="title">{{couponname}}</view>
+        <view class="desc">
+          <!--立减-->
+          <block wx:if="{{backtype == 0}}">
+            <text>立减{{deduct}}元</text>
+          </block>
+          <!--打折-->
+          <block wx:if="{{backtype == 1}}">
+            <text>{{discount}}折</text>
+          </block>
+          <!--返利-->
+          <block wx:if="{{backtype == 2}}">
+            <text wx:if="{{backmoney > 0}}">送{{backmoney}}元余额</text>
+            <text wx:if="{{backcredit > 0}}">送{{backcredit}}积分</text>
+            <text wx:if="{{backredpack > 0}}">送{{backredpack}}元现金</text>
+          </block>
+          <text wx:if="{{enough > 0}}">满{{enough}}元可用</text>
+          <text wx:else>无金额门槛</text>
+        </view>
+        <view class="deadline">{{title4}}</view>
+      </view>
+      <image class="dottedLine" src="/images/user/dotted.png"></image>
+      <block wx:if="{{isdisa}}">
+        <view class="giveOut">已发完</view>
+      </block>
+      <block wx:else>
+        <view class="useNow" wx:if="{{credit == 0 && money ==  0}}" data-couponid="{{id}}" catchtap='getCouponTap'>立即领取</view>
+        <view class="useNow" wx:else data-couponid="{{id}}" catchtap='getCouponTap'>立即兑换</view>
+      </block>
+    </view>
+    <view class='couponDes'>
+      <view class="creditsExchange " wx:if="{{credit > 0 || money > 0}}">
+        <image class="creditsImg" src="/images/user/goldIcon.png"></image>
+        <text class="creditsExchangeText">
+          <text wx:if="{{credit}}">消耗{{credit}}积分</text>
+          <text>花费{{money}}元</text> 兑换</text>
+      </view>
+      <view class="useRange" wx:if="{{limit_text}}">
+        <text class="useRangeText" wx:if="{{toggle}}">{{limit_ellipsis_text}}</text>
+        <text class="useRangeText" wx:else>{{limit_text}}</text>
+        <view wx:if="{{enoughLongText}}" class="{{toggle?'downArrowArr arrowArr':'upArrowArr arrowArr'}}" catchtap="onDesToggleTap" data-couponid="{{id}}">
+          <text class="arrow"></text>
+          <text class="arrow"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

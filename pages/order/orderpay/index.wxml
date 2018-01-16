@@ -1,0 +1,50 @@
+<!--index.wxml-->
+
+<view class="holder">
+  <view class='linestylebig'/>
+  <!--订单编号  -->
+  <view class="contenholder">
+    <text class="contenthint">订单编号</text>
+    <text class='contenttext'>{{result.result.ordersn}}</text>
+  </view>
+
+  <view class='linestylesmall'/>
+
+  <!-- 订单金额  -->
+  <view class="contenholder">
+    <text class='contenthint'>订单金额</text>
+    <text class='contentprice'>￥{{result.result.money}}</text>
+  </view>
+
+   <view class='linestylebig'/>
+
+  <view class='payholder' wx:if="{{result.result.wechat.is_can}}" data-index="{{0}}" bindtap="goPayWeiXin">
+    <view class='lefttholder'>
+      <image class='lefticon' src='/images/order/pay_wx.png'></image>
+      <text class='text'>微信支付</text>
+    </view>
+    <image class='righticon' src='/images/common/arrow_right.png'></image> 
+  </view>
+
+   <view class='linestylesmall'/>
+
+  <view class='payholder' wx:if="{{result.result.credit.is_can}}" data-index="{{1}}" bindtap="goPayBalance"> 
+    <view class='lefttholder'>
+      <image class='lefticon' src='/images/order/pay_balance.png'></image>
+      <text class='text'>余额支付</text>
+      <text class='balancehint'>当前余额:</text>
+      <text class='balance'>￥{{result.result.credit.current}}</text>   
+    </view>
+    <image class='righticon' src='/images/common/arrow_right.png'></image>  
+  </view>
+
+   <view class='linestylesmall'/>
+
+   <view class='payholder' wx:if="{{result.result.other.is_can}}" data-index="{{2}}" bindtap="goPayOther"> 
+    <view class='lefttholder'>
+      <image class='lefticon' src='/images/order/pay_balance.png'></image>
+      <text class='balancehint'>确认支付</text>
+    </view>
+    <image class='righticon' src='/images/common/arrow_right.png'></image>  
+  </view>
+</view>

@@ -1,0 +1,215 @@
+/* pages/shoppingcart/cart/index.wxss */
+@import '../commonview/itemlist/index.wxss';
+@import "../../template/template.wxss";
+
+.cartholder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+}
+
+/*购物车容器  */
+
+.cartholder .cartContentWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+/*顶部提示显示  */
+
+.cartContentWrap .cartHint {
+  color: #ff9c00;
+  font-size: 14px;
+}
+
+/*没更多数据提示  */
+
+.cartContentWrap .noMore {
+  color: #999;
+  font-size: 12px;
+  margin-top: 24rpx;
+  margin-bottom: 144rpx;
+  text-align: center;
+}
+
+/*下单提交容器  */
+
+.cartContentWrap .buyHandleArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+   border-top: 1rpx solid #E6E6E6;
+  /*子元素两端对齐  */
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  /*子元素垂直对齐  */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/*下单提交左边  */
+
+.buyHandleArea .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  padding-left: 6px;
+  margin-left: 8px;
+  /*子元素垂直对齐  */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/*左边的小图标  */
+
+.left .icon {
+  width: 15px;
+  height: 15px;
+  margin-left: 2px;
+  background-color: #009;
+}
+
+.left .chooseAll {
+  color: #999;
+  font-size: 14px;
+  margin-left: 12px;
+}
+
+/*下单提交右边  */
+
+.buyHandleArea .right {
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  flex-direction: row;
+  /*子元素垂直对齐  */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/* 右边的提交按钮 */
+
+.right .toPayBtn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 260rpx;
+  height: 50px;
+  background-color: #ff9c00;
+  /*子元素垂直居中  */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  /*子元素水平居中  */
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.toPayBtn .submitcontent {
+  color: #fff;
+  font-size: 16px;
+}
+
+.right .toPayBtnDeny  {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 260rpx;
+  height: 50px;
+  background-color: #D0D0D0;
+  /*子元素垂直居中  */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  /*子元素水平居中  */
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.toPayBtnDeny .submitcontent {
+  color: #fff;
+  font-size: 16px;
+}
+
+
+/* 右边的价格样式  */
+
+.right .payMoney {
+  font-size: 32rpx;
+  color: #fa6464;
+  margin-right: 24rpx;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/*内容为空的容器  */
+
+.cartholder .noContentWrap {
+  /*flex布局  */
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /* height: 100%; */
+  width: 100%;
+/*盒模型垂直布局  */
+   -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+/*子元素水平居中  */
+  -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    /* background-color: #009988; */
+
+}
+
+.noContentWrap .noContentImg {
+  margin-top: 105px;
+}
+
+.noContentWrap .noContentText {
+  font-size: 15px;
+  color: #999;
+  margin-top: 15px;
+}
+
+.noContentWrap .lookAround {
+  margin-top: 60px;
+}

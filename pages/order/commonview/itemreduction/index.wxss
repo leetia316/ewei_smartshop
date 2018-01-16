@@ -1,0 +1,49 @@
+.itemreduction {
+   display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  background-color: #ffffff;
+/*子元素两端对齐  */
+ -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.itemreduction .reductionleft {
+  margin-left: 12px;
+}
+
+.reductionleft .titlestyle {
+  color: #999999;
+  font-size: 16px;
+}
+
+.reductionleft .titlestyleTwo {
+  color: #999999;
+  font-size: 16px;
+}
+
+.itemreduction .rightholder {
+  display: flex;
+   display: -webkit-box;
+  display: -webkit-flex;
+  flex-direction: row;
+  margin-right: 12px;
+  align-items: center;
+}
+
+.rightholder .righttext {
+  color: #999999;
+  font-size: 16px;
+}
+
+.rightholder .righticon {
+  width: 8px;
+  height: 13px;
+}

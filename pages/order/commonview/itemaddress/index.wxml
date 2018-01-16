@@ -1,0 +1,24 @@
+<template name="itemaddress">
+
+  <view class="addressholder" bindtap="gotoChooseAddress">
+    <view wx:if="{{addressInfo != undefault}}" class="addressshow">
+        <view class="userinfo">
+          <text class='username'>{{addressInfo.realname}}</text>
+          <text class='userphone'>{{addressInfo.mobile}}</text>
+        </view>
+        <view class='addressinfo'>
+          <view class="addressicon">
+             <image class="icon" src="/images/order/icon_address.png" mode="aspectFill"></image>
+          </view>
+          <view class="addressdetail">
+            <text class="text">{{addressInfo.province+' '+addressInfo.city+' '+addressInfo.area+' '+addressInfo.address}}</text>
+          </view>
+        </view>
+    </view>
+    <view wx:else class='addcontent'>
+      <image class="icon" src='/images/order/icon_address.png' mode="aspectFill"></image>
+      <text class="text">添加收货地址</text>
+    </view>
+  </view>
+
+</template>

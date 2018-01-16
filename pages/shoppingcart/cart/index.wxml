@@ -1,0 +1,36 @@
+<!--pages/shoppingcart/cart/index.wxml-->
+<import src="../commonview/itemlist/index.wxml"/>
+<import src="../commonview/showtoast/index.wxml"/>
+<import src="../../template/template.wxml"/>
+
+<view class="cartholder">
+   <view class="cartContentWrap" wx:if="{{able.length !=0 || disable.length !=0}}"> 
+   <!-- <view class="cartContentWrap" wx:if="{{false}}"> -->
+    <!-- <view class="cartHint">已满足满¥ 188.00元免邮费</view> -->
+    <template is="itemlist" data="{{able,disable,selecteAll}}"></template>
+
+    <template is="showtoast" data="{{toastitem}}"></template>
+
+    <view class="noMore">没有更多了</view> 
+    <view class="buyHandleArea">
+      <view class="left" bindtap="selectedAll">
+        <icon wx:if="{{!selecteAll}}" clss = "icon" type="success" color="#D0D0D0" size="15"></icon>
+        <icon wx:else type="success" clss = "icon" color="#ff9c00" size="15"></icon>
+        <text class="chooseAll" >全选</text>  
+      </view>
+     
+      <view class="right">
+          <text class="payMoney">￥{{sumPrice}}</text>
+          <view wx:if="{{goodsNum >0 }}" class="toPayBtn" bindtap="submitCheck"><text class="submitcontent">下单({{goodsNum}})</text></view> 
+          <view wx:else class="toPayBtnDeny" ><text class="submitcontent">下单({{goodsNum}})</text></view> 
+      </view>
+    </view>
+  </view>
+  <view  class="noContentWrap" wx:else >
+    <image class="noContentImg" src="/images/cart/cart.png"></image>
+    <text class="noContentText">购物车空空哒</text>
+    <button class="lookAround" bindtap="jumpToHomePage">到处逛逛</button>
+  </view>
+</view>
+<template wx:if="{{!userGetSetting}}" is="unauth"></template>
+

@@ -1,0 +1,59 @@
+<template name="itemcoupon">
+
+  <view wx:for="{{dataList}}" wx:for-item="itemName" wx:key="{{index}}">
+    <view class="itemcoupon">
+      <view class="itemholder">
+
+        <view class='iconHolder'>
+          <image class="couponicon" src="{{itemName.thumb}}"></image>
+        </view>
+
+        <view class="centre">
+          <view class="title">{{itemName.couponname}}</view>
+          <view class="content">
+            <!--立减-->
+            <block wx:if="{{itemName.backtype == 0}}">
+              <text>立减{{itemName.deduct}}元</text>
+            </block>
+            <!--打折-->
+            <block wx:if="{{itemName.backtype == 1}}">
+              <text>{{itemName.discount}}折</text>
+            </block>
+            <!--返利-->
+            <block wx:if="{{itemName.backtype == 2}}">
+              <text wx:if="{{itemName.backmoney > 0}}">送{{itemName.backmoney}}元余额</text>
+              <text wx:if="{{itemName.backcredit > 0}}">送{{itemName.backcredit}}积分</text>
+              <text wx:if="{{itemName.backredpack > 0}}">送{{itemName.backredpack}}元现金</text>
+            </block>
+            <text wx:if="{{itemName.enough > 0}}">满{{itemName.enough}}元可用</text>
+            <text wx:else>无金额门槛</text>
+          </view>
+          <view class="time">
+            <block wx:if="{{itemName.timestart=='' || itemName.timeend == ''}}">永久有效</block>
+            <block wx:else>有效期{{itemName.timestart}} - {{itemName.timeend}}</block>
+          </view>
+        </view>
+
+        <image class="dottedLine" src="/images/user/dotted.png" ></image>
+       
+        <view class='rightholder'>
+          <image wx:if="{{itemName.selected}}" class='righticon' bindtap='selectCoupon' data-index="{{index}}" src="/images/common/checked_small.png" mode="aspectFit"></image>
+          <image wx:else class='righticon' bindtap='selectCoupon' data-index="{{index}}" src="/images/common/checked_not_small.png" mode="aspectFit"></image>
+        </view>
+      </view>
+
+      <view class='remarkholder' wx:if="{{itemName.limit_text != ''}}" bindtap='unfoldTextView' data-index="{{index}}">
+        <view wx:if="{{!itemName.unfold}}" class='textholder'>
+          <text class='textone'>{{itemName.limit_text}}</text>
+        </view>
+        <view wx:else class='textholder'>
+          <text class='textmore'>{{itemName.limit_text}}</text>
+        </view>
+        <view class='iconholder'>
+          <image class='icon' src='/images/common/unfold_gray.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</template>

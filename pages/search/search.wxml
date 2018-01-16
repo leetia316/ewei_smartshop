@@ -1,0 +1,26 @@
+<!--pages/search/search.wxml-->
+<view class="search_view" catchtouchmove='noScrollMove'>
+    <view class="header-search">
+        <view class="search-tab">
+            <image src="../../images/imgIndex/search_c.png"></image>
+            <input type="text" confirm-type="done" auto-focus="{{focus}}" focus="{{focus}}" class="tab-input" placeholder-style="color:#999;font-size:28rpx;" type="text" name="tab-input" placeholder="输入关键字进行搜索" value="{{searchValue}}" bindconfirm="searchValueInput"/>
+        </view>
+        <view class="canle" bindtap="onClickCancel">
+            <text>取消</text>
+        </view>
+    </view>
+    <view class="history" style="{{historyList == 0?'visibility: hidden':''}}">
+        <view class="sou">历史搜索</view>
+        <view class="delete_img" catchtap="onDelete">
+            <image  src="../../images/imgIndex/shanchu.png"></image>
+        </view>
+
+    </view>
+    <view class="ten-his">
+        <view class="T" wx:for="{{historyList}}" bindtap="keySelect" data-key="{{item}}">{{item}}</view>
+    </view>
+</view>
+
+
+
+

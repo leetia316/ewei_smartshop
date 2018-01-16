@@ -1,0 +1,55 @@
+/* index.wxss */
+@import '../commonview/iteminput/index.wxss';
+@import '../commonview/selectaddress/index.wxss';
+.holder {
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  flex-direction: column;
+
+   -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+}
+
+.holder .linestyle{
+  height: 10px;
+}
+ 
+.citypicker {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  background-color:rgba(0,0,0,0.1);
+}
+
+.holder .saveholder {
+  height: 50px;
+  margin-top: 42px;
+  margin-left: 13px;
+  margin-right: 13px;
+  background: #FF9C00;
+  border-radius: 3px;
+
+   display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /* 子元素水平居中 */
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  /*  子元素垂直居中*/
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.holder .savetext {
+ color: #FFFFFF;
+  font-size: 16px; 
+}
+

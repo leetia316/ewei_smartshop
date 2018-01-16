@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<import src="../commonview/itemaddress/index.wxml"/>
+
+<view class="holder">
+ 
+  <template is="itemaddress" data="{{addressList}}"/>
+
+  <view class='emptyview'/>
+</view>
+
+<view class="addbutton" bindtap="gotoAddressAdd">
+  <image class='addicon' src='/images/address/add_icon.png' mode='aspectFill'></image>
+  <text class="addtext">添加收货地址</text>
+</view>
+
+

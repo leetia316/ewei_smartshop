@@ -1,0 +1,17 @@
+<!--modle.wxml-->
+<template name="selectaddress">
+  <view class="citypicker">
+    <picker-view indicator-style="height: 50px;" value="{{value}}" bindchange="bindChange" class="citybody">
+      <view class="cityheader">
+        <view bindtap="openModal" class="city-cancel">取消</view>
+        <view bindtap="openModal" class="city-true">确定</view>
+      </view>
+      <picker-view-column>
+        <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</template>

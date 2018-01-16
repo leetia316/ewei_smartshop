@@ -1,0 +1,137 @@
+.commodityholder {
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+}
+
+.commodityholder .shopholde {
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  background-color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.commodityholder .linebig {
+  height: 10px;
+  background-color: #fff;
+}
+
+.shopholde .shopicon {
+  height: 17px;
+  width: 17px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.shopholde .shopname {
+  font-size: 16px;
+  color: #2f3138;
+}
+
+.commodityholder .goodslist {
+  display: flex;
+  flex-direction: column;
+}
+
+.goodslist .goodsholde {
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: #fafafa;
+}
+
+/*商品图片的标签  */
+
+.goodsholde .goodsicon {
+  width: 120rpx;
+  height: 120rpx;
+  background-color: #999;
+  margin: 12px;
+  border-radius: 6rpx;
+}
+
+/*商品描述的右边区域  */
+
+.goodsholde .rightholder {
+ 
+  /* flex-direction: row; */
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin-top: 12px;
+  margin-bottom: 12px;
+   margin-right: 12px; 
+}
+
+/*商品描述子区域的上面横区域  */
+
+.rightholder .descripholder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /* 子元素两端对齐 */
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+/*下面区域  */
+
+.rightholder .descripholderB {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 22px;
+  /* 子元素两端对齐 */
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+/*文字样式  */
+
+.descripholder .textOne {
+  color: #2f3138;
+  font-size: 13px;
+  width: 385rpx;
+}
+
+.descripholder .textOnePrice {
+  color: #2f3138;
+  font-size: 13px;
+  margin-top: 3px;
+  /* margin-right: 12px; */
+}
+
+.descripholderB .textTwo {
+  color: #999;
+  font-size: 12px;
+  width: 385rpx;
+}
+
+.descripholderB .textTwoB {
+  color: #999;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.goodslist .linedeep {
+  height: 1rpx;
+  background-color: #e6e6e6;
+}

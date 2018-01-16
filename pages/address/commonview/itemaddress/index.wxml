@@ -1,0 +1,26 @@
+<template name="itemaddress">
+
+  <view wx:for="{{addressList}}" wx:for-index="idx" wx:for-item="itemName" wx:key="id">
+    <view class="addressholder">
+
+      <image wx:if="{{itemName.selected == 1}}" class='headline' src='/images/address/head_line.png'></image>
+      
+      <view class="userinfo"  bindtap="gotoBack" id="{{idx}}">
+        <text class='username'>{{itemName.realname}}</text>
+        <text class='userphone'>{{itemName.mobile}}</text>
+      </view>
+
+      <text class='addressinfo'  bindtap="gotoBack" id="{{idx}}">
+      {{itemName.province+' '+itemName.city+' '+itemName.area+' '+itemName.address}}</text>
+
+      <view class='linestyle'/>
+
+      <view class="editholder" bindtap="gotoAddressEdit" id="{{idx}}">
+        <view class="emptyview"/>
+        <image class="eidticon" src="/images/address/edit_icon.png"></image>
+        <text class='edittext'>修改</text>
+      </view>
+    </view>
+  </view>
+
+</template>

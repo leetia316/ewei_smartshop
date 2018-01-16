@@ -1,0 +1,22 @@
+.holder {
+  display:flex;
+  flex-direction: row;
+}
+
+.holder .colortext{
+  color:#990000;
+}
+
+.holder .graytext{
+  color:#333333;
+}
+
+
+.holder .image{
+  height: 20px;
+  width: 20px;
+}
+
+
+
+

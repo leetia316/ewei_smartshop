@@ -1,0 +1,85 @@
+/* index.wxss */
+.pickerholder {
+  width: 100%;
+  display: flex;
+  z-index: 12;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  height: 600rpx;
+  padding-top: 2px;
+}
+
+.pickerholder .citybody{
+  position: fixed;
+  bottom: 0rpx;
+}
+
+.pickerholder .cityheader {
+  position: absolute;
+  top: -1px;
+  width: 100%;
+  height: 100rpx;
+  z-index: 4;
+  background-color: #fff;
+  border-bottom: 1rpx solid #d0d0d0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /*子元素垂直居中  */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  /*子元素两端对齐  */
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.cityheader .citycancel {
+  float: left;
+  margin: 15px;
+  color: #333;
+  font-size: 18px;
+}
+
+.cityheader .citytrue {
+  float: right;
+  margin: 15px;
+  color: #ff9c00;
+  font-size: 18px;
+}
+
+.pickeritem {
+line-height: 100rpx;
+ margin-left: 5rpx;
+ margin-right: 5rpx;
+ text-align: center;
+/* 
+  line-height: 200rpx;
+  height: 200rpx;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  text-align: center; */
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /*子元素垂直居中  */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  /*子元素水平居中  */
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}

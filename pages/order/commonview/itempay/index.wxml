@@ -1,0 +1,14 @@
+<template name="itempay">
+  <view class="holder">
+    <view class="left">
+      <image src="../../../images/common/arrow_right.png"></image>
+      <view>
+        <text>微信支付</text>
+        <text>微信安全支付</text>
+      </view>
+    </view>
+    <view class="right">
+      <image src="../../../images/common/arrow_right.png"></image>
+    </view>
+  </view>
+</template>

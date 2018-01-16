@@ -1,0 +1,94 @@
+<!--pages/shop-list/shop-list.wxml-->
+<!--搜索框  -->
+<view class="shopGoods" scroll-y>
+    <text class="userinfo-nickname">{{title}}</text>
+    <view class="view_top">
+        <view class="search" data-w="{{seatchtitle}}">
+            <image mode="aspectFit" src="../../images/imgIndex/search_c.png"></image>
+            <view wx:if="{{seatchtitle !== '搜索商品'}}">
+                <navigator url="/pages/search/search" class="search-input" open-type="navigateBack" delta ='2'><text>{{seatchtitle}}</text></navigator>
+            </view>
+            <view wx:elif ="{{seatchtitle === '搜索商品'}}">
+                <navigator url="/pages/search/search" class="search-input"><text>{{seatchtitle}}</text></navigator>
+            </view>
+
+        </view>
+        <view class="shoplist-tab">
+
+            <block wx:for="{{pali}}" wx:for-item="pali">
+                <view class="bar_view">
+                    <view class="{{id === pali.id ? 'statusAcitve': 'holder'}}" data-index="{{pali.id}}" data-type="{{by}}" catchtap="onStepTap">
+                        {{pali.title}}
+                    </view>
+                    <block>
+                        <image wx:if="{{(by == null || by == '') && pali.id === 2}}" src='{{pali.image}}' class='image'></image>
+                        <image wx:if="{{by === 'asc' && pali.id === 2}}" src="../../images/imgIndex/markup.png" class='image'></image>
+                        <image wx:if="{{by === 'desc' && pali.id === 2}}" src="../../images/imgIndex/markdown.png" class='image'></image>
+                    </block>
+                </view>
+
+            </block>
+            <block wx:for="{{screen}}" wx:for-item="screen">
+                <view class="bar_view">
+                    <view class="holder" data-index="{{ider}}" catchtap="onCreen" style="{{ider === 4? 'color:#FF9C00':''}}">{{screen.title}}</view>
+                    <block>
+                        <image wx:if="{{ider === 3}}" src="../../images/imgIndex/shape_01.png" class='image_mark'></image>
+                        <image wx:if="{{ider === 4}}" src="../../images/imgIndex/shape_02.png" class='image_mark'></image>
+                    </block>
+                </view>
+
+            </block>
+
+        </view>
+    </view>
+   
+    <!--筛选弹层  -->
+    <view class="{{showView?'choose_show':'choose'}}" catchtouchmove='noScrollMove'>
+        <view class="border_box">
+            <block wx:for="{{typedata}}" wx:for-item="item" wx:key="{{index}}" >
+                <view wx:if="{{item.id == 0}}" class="command" data-index="{{index}}" bindtap="onClick">{{item.title}}</view>
+                <view wx:else class="recommend" data-index="{{index}}" bindtap="onClick">{{item.title}}</view>
+            </block>
+            <view class="btn_view" bindtap="onMark">
+                <botton class="btn_mark" type="botton" data-id="">确定</botton>
+            </view>
+        </view>
+
+    </view>
+    <!--加载接口数据视图显示  -->
+    <view class="shop-list">
+        <!--navigator跳转  -->
+        <block wx:for="{{goodsData}}" wx:for-item="item">
+            <view class="view_list">
+                <view class="view_list_view">
+                    <view class="pr" catchtap='onNavigator' data-id='{{item.id}}'>
+                        <image class="photo" src="{{item.thumb}}"></image>
+                        <view class="view_boxer">
+                            <view class="title">{{item.title}}</view>
+                            <view class="price_price">
+                                <view class="old" style="{{item.productprice <=0? 'display:none':''}}">¥{{item.productprice}}</view>
+                                <view class="new-pri" style="{{item.productprice <=0? 'margin-left:0':''}}">¥{{item.minprice}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+        </block>
+        <view class="no_more" wx:if="{{showNoMore}}">没有更多了</view>
+    </view>
+    <view class="view_news" wx:if="{{message}}" style="{{message?'display: block':'display: none'}}">
+        <view class="mess">{{message}}
+            <!--<view class="border">-->
+            <!--<image mode="aspectFit" src='../../images/imgIndex/Rectangle.png'></image>-->
+            <!--</view>-->
+            <!--<view class="border-right">-->
+            <!--<image mode="aspectFit" src='../../images/imgIndex/Rectangle.png'></image>-->
+            <!--</view>-->
+        </view>
+    </view>
+     <!--遮罩层 -->
+     <view class="{{showView?'layer_show':'layer_view'}}" bindtap="onMark"  catchtouchmove='noScrollMove'>
+
+    </view>
+</view>

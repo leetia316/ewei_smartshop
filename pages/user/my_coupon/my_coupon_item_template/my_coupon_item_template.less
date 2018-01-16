@@ -1,0 +1,136 @@
+@import  "../../../../style/common.less";
+.couponItemWrap{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  background-color: #fff;
+  border-radius: 4rpx;
+  box-sizing: border-box;
+  margin-bottom: 30rpx;
+  &:last-child{
+    margin-bottom: 0;
+  }
+  .couponItemContent{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+            flex-direction: row;
+    padding-left: 20rpx;
+    .couponItemImg{
+      width: 130rpx;
+      height: 130rpx;
+      border-radius: 50%;
+      margin-right: 30rpx;
+      margin-top: 20rpx;
+    }
+    .couponInfo{
+      margin-top: 22rpx;
+      width: 318rpx;
+      .title{
+        font-size: 30rpx;
+        line-height: 30rpx;
+        margin-bottom: 18rpx;
+        color: @titleFontColor;
+      }
+      .desc{
+        margin-bottom: 26rpx;
+        line-height: 34rpx;
+        text{
+          font-size: 26rpx;
+          line-height: 26rpx;
+          color: @fontColor;
+          margin-right: 10rpx;
+        }
+      }
+      .deadline{
+        font-size: 22rpx;
+        line-height: 22rpx;
+        color: @subFontColor;
+        margin-bottom:14rpx;
+      }
+    }
+    .dottedLine{
+      width: 18rpx;
+      height: 180rpx;
+    }
+    .useNow,.giveOut{
+      font-size: 34rpx;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+              -webkit-justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+              -webkit-align-items: center;
+    }
+    .useNow{
+      color: @orangeColor;
+    }
+    .giveOut{
+      color: @subFontColor;
+    }
+  }
+  .useRange{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+            flex-direction: row;
+    line-height: 36rpx;
+    padding: 17rpx 0 17rpx 20rpx;
+    background-color: #FAFAFC;
+    .useRangeText{
+      display: inline-block;
+      font-size: 24rpx;
+      color: @fontColor;
+      width: 574rpx;
+      text-align:justify;
+      word-break:break-all;
+    }
+    .downArrowArr{
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+      -webkit-flex-direction: column;
+              flex-direction: column;
+      .arrow{
+        .downArrow(#7c9fff,14rpx,2rpx);
+        margin-top: -3px;
+      }
+    }
+    .upArrowArr{
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+      -webkit-flex-direction: column;
+              flex-direction: column;
+      .arrow{
+        .upArrow(#7c9fff,14rpx,2rpx);
+        margin-bottom: -3px;
+      }
+    }
+  }
+}

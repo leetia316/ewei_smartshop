@@ -1,0 +1,142 @@
+<!--pages/user/order_detail/order_detail.wxml-->
+<import src="order_detail_list_template/order_detail_list_template.wxml" />
+<view class="orderDetailContainer">
+  <view class="bannerDetailStep">
+    <view class="detailStepInfo">
+      <view class="infoStep">{{orderDetailData.order.bannnerStatusStr}}</view>
+      <view class="infoMoney">订单金额 (含运费) :
+        <text class="money">¥ {{orderDetailData.order.total_price}}</text>
+      </view>
+    </view>
+    <view class="detailStepImgArea">
+      <image class="stepImg" src="/images/user/detailStep.png"></image>
+      <text class="imgText">{{orderDetailData.order.bannnerImgStatusStr}}</text>
+    </view>
+  </view>
+  <image class="colorLine" src="/images/user/colorLine.png"></image>
+  <view class="deliveryInfo" catchtap='onDeliveryTap' wx:if="{{orderDetailData.express}}">
+    <view class="left">
+      <view class="companyName">
+        <view class="title">快递公司</view>
+        <view class="deliveryDel">{{orderDetailData.order.expresscom}}</view>
+      </view>
+      <view class="deliverySn">
+        <view class="title">快递单号</view>
+        <view class="deliveryDel">{{orderDetailData.order.expresssn}}</view>
+      </view>
+    </view>
+    <view class="rightArrow"></view>
+  </view>
+  <view class="clientInfo">
+    <view class="nameTel ">
+      <text class="name title">{{orderDetailData.address.realname}}</text>
+      <text class="tel title">{{orderDetailData.address.mobile}}</text>
+    </view>
+    <view class="address">
+      <image class="addressIcon" src="/images/order/icon_address.png"></image>
+      <text class="addressText">{{orderDetailData.address.province}}{{orderDetailData.address.city}}{{orderDetailData.address.area}}{{orderDetailData.address.address}}</text>
+    </view>
+  </view>
+  <block wx:for="{{orderDetailData.goods}}" wx:for-item="goods" wx:key="*this">
+    <template is="orderDetailListTemplate" data="{{...goods,refundid:orderDetailData.order.refundid,refundstate:orderDetailData.order.refundstate}}"></template>
+  </block>
+  <view class="goodsSubtotal">
+    <view class="goodsTotal">
+      <text class="title">商品小计</text>
+      <text class="title">¥ {{orderDetailData.order.goodsprice}}</text>
+    </view>
+    <view class="goodsItemWrap">
+      <view class="goodsItem">
+        <text>运费</text>
+        <text>¥ {{orderDetailData.order.dispatchprice}}</text>
+      </view>
+      <view class="goodsItem" wx:if="{{orderDetailData.order.discountprice > 0}}">
+        <text>会员优惠</text>
+        <text>-¥ {{orderDetailData.order.discountprice}}</text>
+      </view>
+       <!-- <view class="goodsItem"  wx:if="{{orderDetailData.order.buyagainprice > 0}}">
+        <text>重复购买优惠</text>
+        <text>-¥ {{orderDetailData.order.buyagainprice}}</text>
+      </view> -->
+       <view class="goodsItem"  wx:if="{{orderDetailData.order.isdiscountprice > 0}}">
+        <text>促销优惠</text>
+        <text>-¥ {{orderDetailData.order.isdiscountprice}}</text>
+      </view>
+      <view class="goodsItem" wx:if="{{orderDetailData.order.deductenough > 0}}">
+        <text>满额立减</text>
+        <text>-¥ {{orderDetailData.order.deductenough}}</text>
+      </view>
+     <view class="goodsItem" wx:if="{{orderDetailData.order.couponprice > 0}}">
+        <text>优惠券优惠</text>
+        <text>-¥ {{orderDetailData.order.couponprice}}</text>
+      </view>
+      <view class="goodsItem"  wx:if="{{orderDetailData.order.deductprice > 0}}">
+        <text>积分抵扣</text>
+        <text>-¥ {{orderDetailData.order.deductprice}}</text>
+      </view>
+      <view class="goodsItem"  wx:if="{{orderDetailData.order.deductcredit2 > 0}}">
+        <text>余额抵扣</text>
+        <text>-¥ {{orderDetailData.order.deductcredit2}}</text>
+      </view>
+      <view class="goodsItem"  wx:if="{{orderDetailData.order.seckilldiscountprice > 0}}">
+        <text>秒杀优惠</text>
+        <text>-¥ {{orderDetailData.order.seckilldiscountprice}}</text>
+      </view>
+    </view>
+    <view class="goodsPay">
+      <view class="hasFreight">(含运费)</view>
+      <view class="actualPay title">实付费：
+        <text>¥ {{orderDetailData.order.total_price}}</text>
+      </view>
+    </view>
+
+  </view>
+  <view class="orderTimeInfo">
+    <view class="timeItem">
+      <text>订单编号</text>
+      <text>{{orderDetailData.order.ordersn}}</text>
+    </view>
+    <view class="timeItem" wx:if="{{orderDetailData.order.createtime != ''}}">
+      <text>创建时间</text>
+      <text>{{orderDetailData.order.createtime}}</text>
+    </view>
+    <view class="timeItem" wx:if="{{orderDetailData.order.paytime != ''}}">
+      <text>支付时间</text>
+      <text>{{orderDetailData.order.paytime}}</text>
+    </view>
+    <view class="timeItem" wx:if="{{orderDetailData.order.sendtime != ''}}">
+      <text>发货时间</text>
+      <text>{{orderDetailData.order.sendtime}}</text>
+    </view>
+    <view class="timeItem" wx:if="{{orderDetailData.order.finishtime != ''}}">
+      <text>完成时间</text>
+      <text>{{orderDetailData.order.finishtime}}</text>
+    </view>    
+  </view>
+  <view class="handleButtons" wx:if="{{orderDetailData.order.status == 0 || orderDetailData.order.status == 2}}">
+    <view class="totalMoney" wx:if="{{orderDetailData.order.status == 0}}">¥ {{orderDetailData.order.total_price}}</view>
+    <view class="buttonsWrap" >
+      <block wx:if="{{orderDetailData.order.status == 0 }}">
+        <button class="canleBtn" catchtap='onCancelTap' data-orderid="{{orderDetailData.order.id}}">取消订单</button>
+        <button class="payBtn" catchtap='onPayTap' data-orderid="{{orderDetailData.order.id}}">支付订单</button>
+      </block>
+      <block wx:if="{{orderDetailData.order.status == 2}}">
+        <button class="sureBtn" catchtap='onSureTap' data-orderid="{{orderDetailData.order.id}}">确认收货</button>
+      </block>
+    </view>
+  </view>
+     <!-- 取消原因 -->
+    <view class="reasonModelArea">
+      <view class="mask" catchtap="hideModal" catchtouchmove='noScrollMove' wx:if="{{showModalStatus}}"></view>
+      <view animation="{{animationData}}" catchtouchmove='noScrollMove' class="reasonModel" wx:if="{{showModalStatus}}">
+        <view class='btns'>
+          <view class='cancelBtn btn' catchtap="hideModal">取消</view>
+          <view class='sureBtn btn' wx:if="{{cancelreason != ''}}" catchtap='onCancelSureTap'>确定</view>
+          <view class='noTapSureBtn btn' wx:else>确定</view>
+        </view>
+        <view class='reasons' wx:for="{{reasons}}" wx:for-item="reason" wx:key="*this">
+          <view class="{{cancelreason == reason? 'blue':''}}" data-cancelReason='{{reason}}' catchtap='onCancelReasonTap'>{{reason}}</view>
+        </view>
+      </view>
+    </view>
+</view>

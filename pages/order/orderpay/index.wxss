@@ -1,0 +1,136 @@
+/* index.wxss */
+
+/*总容器  */
+
+.holder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /* 盒模型垂直布局 */
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  /* 子元素水平居中 */
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+/*内容容器  */
+
+.holder .contenholder {
+  background-color: #fff;
+  padding-top: 14px;
+  padding-bottom: 14px;
+
+      display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    
+  /* 子元素两端对齐 */
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  /* 子元素垂直居中 */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.contenholder .contenthint {
+  color: #333;
+  font-size: 16px;
+  margin-left: 12px;
+}
+
+.contenholder .contenttext {
+  color: #666;
+  font-size: 16px;
+  margin-right: 12px;
+}
+
+.contenholder .contentprice {
+  color: #fa6464;
+  font-size: 16px;
+  margin-right: 12px;
+}
+
+/*支付方式容器  */
+
+.holder .payholder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  background-color: #fff;
+  /* 子元素两端对齐 */
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  /* 子元素垂直居中 */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.payholder .lefttholder {
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 12px;
+}
+
+/*支付方式的图标  */
+
+.lefttholder .lefticon {
+  width: 20px;
+  height: 20px;
+}
+
+/*支付方式的文字  */
+
+.lefttholder .text {
+  color: #333;
+  font-size: 16px;
+  margin-left: 6px;
+}
+
+.lefttholder .balancehint {
+  color: #999;
+  font-size: 14px;
+  margin-left: 6px;
+}
+
+.lefttholder .balance {
+  color: #fa6464;
+  font-size: 14px;
+}
+
+/*支付箭头  */
+
+.payholder .righticon {
+  width: 8px;
+  height: 13px;
+  margin-right: 12px;
+}
+
+.holder .linestylebig {
+  height: 10px;
+}
+
+.holder .linestylesmall {
+  height: 1rpx;
+}

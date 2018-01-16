@@ -1,0 +1,22 @@
+<template name="iteminput">
+        <view class="infoItem" wx:if="{{isAddress == 0}}">
+            <text class="infoItemTitle infoItemInputTitle">{{title}}</text>
+            <input class="infoItemText infoItemInputText"  placeholder-style="color:#666666" id="{{title}}" bindinput="valueInput" placeholder="{{hint}}"  maxlength="{{maxlength}}"  type="{{type}}"/>
+        </view>
+
+        <view class="infoItem" wx:if="{{isAddress==2}}">
+            <text class="infoItemTitle">{{title}}</text>
+            <text class="infoItemText" bindtap="openModal">{{hint}}</text>
+        </view>
+
+        <view class="infoItem " wx:elif="{{isAddress == 1}}">
+            <text class="infoItemTitle infoItemInputTitle">{{title}}</text>
+            <input class="infoItemText infoItemInputText"  placeholder-style="color:#666666" id="{{title}}" bindinput="valueInput" placeholder="{{hint}}"  maxlength="{{maxlength}}"  type="{{type}}"/>
+        </view>
+
+        <view class="infoItem " wx:elif="{{isAddress == 3}}">
+            <text class="infoItemTitle">{{title}}</text>
+            <textarea class='infoItemTextarea'  placeholder="{{hint}}" id="textarea" bindinput="valueInput"  placeholder-style="color:#666666;font-size:32rpx" value=""/>
+        </view>
+    
+</template>

@@ -1,0 +1,74 @@
+<!--index.wxml-->
+
+<import src="../commonview/itemaddress/index.wxml"/>
+<import src="../commonview/itemcommodity/index.wxml"/>
+<import src="../commonview/itemacross/index.wxml"/>
+<import src="../commonview/iteminput/index.wxml"/>
+<import src="../commonview/itemreduction/index.wxml"/>
+
+<view class="holder">
+    <image class='headline' src='/images/address/head_line.png'></image>
+    <!--地址  -->
+    <template is="itemaddress"  data="{{addressInfo}}"/>
+    <!--分割线  -->
+    <view class="linebig"/>
+    <!--商品列表  -->
+    <template is="itemcommodity" data="{{dataList}}"/>  
+     <!--分割线  -->
+    <view class="linebig"/>
+    <!--留言  -->
+    <template is="iteminput" data="{{...receiverItem,leaveMessage}}"/>
+      <!--分割线  -->
+    <view class="linebig"/>  
+    <!--是否有优惠券  -->
+    <template is="itemacross" data="{{...itemCoupon}}"/>    
+      <!--分割线  -->
+    <view class="linebig"/>
+    <!--商品小计  -->
+    <template is="itemacross" data="{{...itemAmount}}"/>  
+    <!--分割线  -->
+    <view class="linesmall"/>
+    <!--商城满减优惠  -->
+    <view wx:if="{{showMallDiscount}}">
+      <template is="itemreduction" data="{{...mallDiscounts}}"/>
+       <!--分割线  -->
+      <view class="linesmall"/>
+    </view>  
+    <!--商户满减优惠  -->
+    <view wx:if="{{showMerchants}}">
+      <template is="itemreduction" data="{{...merchantsReduction}}"/>
+       <!--分割线  -->
+      <view class="linesmall"/>
+    </view> 
+    <!--会员优惠 -->
+    <view wx:if="{{showMember}}">
+      <template is="itemacross" data="{{...memberItem}}"/>
+       <!--分割线  -->
+      <view class="linesmall"/>
+    </view> 
+    <!--促销优惠  -->
+    <view wx:if="{{showPromotion}}">
+      <template is="itemacross" data="{{...promotionItem}}"/>
+       <!--分割线  -->
+      <view class="linesmall"/>
+    </view> 
+    <!--运费  -->
+    <template is="itemacross" data="{{...itemCarriage}}"/>  
+     <!--分割线  -->
+    <view class="linesmall"/>
+    <!--优惠券优惠  -->
+    <view wx:if="{{showCoupon}}">
+      <template is="itemacross" data="{{...couponContent}}"/>  
+    </view>
+  <view class='emptyview'/>
+
+  <!--支付显示栏  -->
+  <view class="payHolder" >
+    <text class="paytitle">需付:</text>
+    <text class="paySum">￥{{priceSum}}</text>
+    <view class="payButton" bindtap="gotoPay">
+      <text class="paySubmit">立即支付</text>
+    </view>
+  </view>
+
+</view> 

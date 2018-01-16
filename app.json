@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/order-detail/order-detail",
+    "pages/user/my_coupon/my_coupon",
+    "pages/user/get_coupon/get_coupon",
+    "pages/shop-list/shop-list",    
+	"pages/order/orderconfirm/index",
+    "pages/shoppingcart/cart/index",
+    "pages/user/my_order/my_order",
+    "pages/address/addresslist/index",
+    "pages/search/search",
+    "pages/cart/cart",
+    "pages/user/user",
+    "pages/user/order_detail/order_detail",   
+    "pages/address/addressadd/index",
+    "pages/address/addressedit/index",
+   
+    "pages/order/orderpay/index",
+    "pages/order/couponselect/index",    
+    "pages/shop-list/screen/screen"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh":true,
+    "backgroundColor":"#f6f6f6",
+    "navigationBarTitleText":""
+  },
+  "tabBar": {
+    "color": "#a6abbb",
+    "selectedColor": "#ff9c00",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/imgIndex/index_01.png",
+        "selectedIconPath": "images/imgIndex/index_02.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/shoppingcart/cart/index",
+        "iconPath": "images/imgIndex/cart_01.png",
+        "selectedIconPath": "images/imgIndex/cart_02.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "images/imgIndex/user_01.png",
+        "selectedIconPath": "images/imgIndex/user_02.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

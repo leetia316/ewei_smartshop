@@ -1,0 +1,149 @@
+/*根容器  */
+
+.addressholder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  align-items: center;
+  background-color: #fff;
+}
+
+/*没有数据时的根容器  */
+
+.addressholder .addcontent {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  justify-content: center;
+  margin-top: 18px;
+  /*子元素垂直居中  */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.addcontent .icon {
+  width: 21px;
+  height: 20px;
+  margin-bottom: 8px;
+}
+
+.addcontent .text {
+  color: #999;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/*有地址数据时的根容器  */
+
+.addressholder .addressshow {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+}
+
+/*用户信息  */
+
+.addressshow .userinfo {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  margin-top: 8px;
+  margin-left: 41px;
+  margin-right: 12px;
+  /* 子元素垂直居中 */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  /* 子元素两端对齐 */
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.userinfo .username {
+  color: #333;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.userinfo .userphone {
+  color: #333;
+  font-size: 16px;
+}
+
+/*位置信息  */
+
+.addressshow .addressinfo {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+/* 地址图标容器 */
+
+.addressinfo .addressicon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 13px;
+  margin-top: 5rpx;
+}
+
+.addressicon .icon {
+  height: 18px;
+  width: 18px;
+}
+
+/*地址信息容器  */
+
+.addressinfo .addressdetail {
+  width: 100%;
+  flex-direction: row;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.addressdetail .text {
+  width: 100%;
+  display: inline-block;
+  color: #333;
+  font-size: 16px;
+  text-align: justify;
+  vertical-align: middle;
+}
+
+.inputholder .text:after {
+  display: inline-block;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  content: '';
+}

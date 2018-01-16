@@ -1,0 +1,239 @@
+/*@lineColor:#e6e6e6;
+@backColor:#F0F0F0;
+@borderColor:#d9d9d9;
+@strongRedColor:#fd711c;
+@titleFontColor:#333333;
+@fontColor:#666666;*/
+@import "../template/template.wxss";
+text {
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 24rpx;
+  color: #666;
+}
+page {
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  width: 100%;
+  height: 100%;
+  background: #f8f8f8;
+}
+.container {
+  width: 100%;
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 26rpx;
+  padding: 0;
+  overflow-x: hidden;
+}
+.index-nav {
+  display:flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  flex-direction:row;
+  width:100%;
+  height:172rpx;
+  /*-webkit-box-pack:center;
+  -webkit-box-align:center; */
+  text-align:center;
+  padding-top: 40rpx;
+  background:#fff;
+  box-sizing:border-box;
+
+}
+.istime{
+  flex:1;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+}
+.coupon{
+  flex:1;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+}
+.myorder{
+  flex:1;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+}
+.all{
+   flex:1;
+   -webkit-box-flex: 1;
+   -webkit-flex: 1;
+}
+.search_box {
+    width: 100%;
+    background: #fff;
+}
+.search {
+  margin: 20rpx 16rpx 0 16rpx;
+}
+.search wx-image {
+  width: 29rpx;
+  height: 29rpx;
+  text-align: center;
+  z-index: 99;
+  position: absolute;
+  left: 283rpx;
+  margin-top: 14rpx;
+}
+.search-input {
+  border: 1rpx solid #f7f7f7;
+  border-radius: 24rpx;
+  text-align: center;
+  vertical-align: middle;
+  background: #f7f7f7;
+  height: 54rpx;
+}
+.search-input text {
+  color:#999;
+  font-size:28rpx;
+  line-height: 57rpx;
+}
+.merchandise {
+  /* margin-left: 10rpx;
+  vertical-align: top;
+  margin-top: 4rpx; */
+  /* position: relative;
+  top: 5rpx;
+  left: 4rpx; */
+}
+.merch {
+  font-size: 30rpx;
+  margin: 0 0 0 7rpx;
+}
+.isring{
+  display:flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  flex-direction:row;
+  vertical-align: top;
+  padding-top: 24rpx;
+}
+.index-img wx-image {
+  width: 68rpx;
+  height: 68rpx;
+}
+.index-img02 wx-image {
+  width: 68rpx;
+  height: 68rpx;
+}
+.index-img03 wx-image {
+  width: 68rpx;
+  height: 68rpx;
+}
+.index-img04 wx-image {
+  width: 68rpx;
+  height: 68rpx;
+}
+.index-img05 {
+  /* display: inline-block;
+  vertical-align: top;
+  margin-top: 3rpx; */
+  /* position: relative;
+  top: 4rpx;
+  left: -7rpx;  */
+  display: inline-block;
+}
+.index-img05 wx-image {
+  width: 37rpx;
+  height: 36rpx;
+  display: inline-block;
+}
+/*.timer-shop{
+  float: @floatBar;
+  margin-left:@barMargin;
+}*/
+/*
+.coupon{
+  float: @floatBar;
+  margin-left:@barMargin;
+}
+.me-order{
+  float: @floatBar;
+  margin-left:@barMargin;
+}
+.all-things{
+  float: @floatBar;
+  margin-left:@barMargin;
+}*/
+.count-list {
+  width: 100%;
+  margin-top: 16rpx;
+}
+.pr {
+     width: 352rpx; 
+    display: inline-block;
+    background: #fff;
+    margin:17rpx 0rpx 0rpx 16rpx;
+    border-radius: 8rpx;
+}
+.photo {
+  width: 352rpx;
+  height: 350rpx;
+  border-top-right-radius: 8rpx;
+  border-top-left-radius: 8rpx;
+}
+.title {
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 28rpx;
+  margin-bottom: 4rpx;
+  line-height: 1.5;
+}
+.gmxx {
+  text-align: center;
+  text-decoration: line-through;
+  /* margin-left: -20rpx; */
+  font-size: 30rpx;
+  color: #8a8b8f;
+}
+.gmx {
+  text-align: center;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  color: #fa3f3f;
+}
+.view_boxer {
+    height: 100rpx;
+}
+.tutu_img {
+  width: 100%;
+  text-align: center;
+}
+.tutu_img wx-image {
+  width: 40rpx;
+  height: 40rpx;
+}
+.tutu_img .no_more {
+  color: #999;
+  font-size: 26rpx;
+  height:134rpx;
+ line-height:134rpx;
+ text-align: center;
+}
+.price_price{
+  margin-top: -2rpx;
+  display:flex;
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  line-height:50rpx;
+  flex-direction:row;
+  -webkit-flex-direction:row;
+  align-items:center;
+  -webkit-align-items:center;
+   box-align:center;
+   -moz-box-align:center;
+   -webkit-box-align:center;
+  -webkit-justify-content:center;
+   justify-content:center;
+  -moz-box-pack:center;
+  -webkit--moz-box-pack:center;
+  box-pack:center;
+  text-align: center;
+}

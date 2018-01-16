@@ -1,0 +1,37 @@
+<import src="../itemgoods/index.wxml" />
+
+<template name="itemlist">
+
+  <view class='viewholder'>
+    <!--店铺商品-->
+    <view wx:for="{{able}}" wx:for-item="item" wx:key="{{index}}" >
+      <view class="cartItemListWrap">
+        <view class="cartShopTitle" >
+          <view class="left">
+            <icon type="success" wx:if="{{item.selected ==0}}" color="#D0D0D0" size="15" bindtap="merchantCheckAll" data-index="{{index}}"/>
+            <icon type="success"  wx:else color="#ff9c00" size="15" bindtap="merchantCheckAll" data-index="{{index}}"/>
+            <text class="shopName"  bindtap="jumpToHomePage">{{item.shopname}}</text>
+          </view>
+          <view wx:if="{{item.coupons != 0}}" class="getCoupon" bindtap="jumpCoupon">领券</view>
+        </view>
+        <template is="itemgoods" data="{{datalist:item.goods, position:index,isExpire:false}}"></template>
+      </view>
+    </view>
+     <!-- 失效商品  -->
+
+    <view class="disabledCartListWrap" wx:if="{{disable.length !=0}}">
+      <view class="disabledCartTitle">
+        <view class="left">
+          <text class="circle"></text>
+          <text class="shopName cartCategoryName">失效商品</text>
+        </view>
+        <view class="right" bindtap="clearExpireList"> 
+          <image class="clearIcon" src="/images/user/clearIcon.png"></image>
+          <text class="cleartext" >清空</text>
+        </view>
+      </view>
+      <template is="itemgoods" data="{{datalist:disable,position:index,isExpire:true}}"></template>
+    </view>
+  </view>
+
+</template>

@@ -1,0 +1,58 @@
+<import src="../../order_item_template/order_item_template.wxml" />
+<template name="orderDetailListTemplate">
+  <view class="orderDetailListWrap">
+    <view class="shopInfo user_item" catchtap='toIndexTap'>
+      <view class="left">
+        <image src="{{shoplogo}}"></image>
+        <text class="shopTitle title">{{shopname}}</text>
+      </view>
+      <view class="rightArrow"></view>
+    </view>
+    <block wx:for="{{goods_info}}" wx:for-item="goodInfo" wx:key="goodsid">
+      <template is="orderItemTemplate" data="{{...goodInfo,refundid:refundid,refundstate:refundstate}}"></template>
+      <view class="upLoadInfoArea" wx:if="{{goodInfo.diyformfields}}">
+        <!--提交的资料  -->
+        <view class="upLoadInfoTitle" data-goodid='{{goodInfo.goodsid}}' catchtap="infoToggleTap">
+          <view class="upTitle">{{goodInfo.toggle?'收起提交的资料':'展开提交的资料'}}</view>
+          <!--判断转换文案-->
+          <view class="{{goodInfo.toggle?'upArrowArr arrowArr':'downArrowArr arrowArr'}}">
+            <view class="arrow"></view>
+            <view class="arrow"></view>
+          </view>
+        </view>
+        <view class="upLoadInfo" wx-if="{{goodInfo.toggle}}">
+          <!--单文本显示的内容  -->
+          <block wx:for="{{goodInfo.singleTextArr}}" wx:for-item="items" wx:key="*this">
+            <view class="infoItem">
+              <text class="infoItemTitle">{{items.name}}</text>
+              <text class='infoItemText'>{{items.data}}</text>
+            </view>
+          </block>
+          <!--多文本显示的内容  -->
+          <block wx:for="{{goodInfo.manyTextArr}}" wx:for-item="items" wx:key="*this">
+            <view class="infoItem">
+              <text class="infoItemTitle">{{items.name}}</text>
+              <text class='infoItemText'>
+                <block wx:for="{{items.data}}" wx:for-item="data" wx:key="*this">
+                  <text>{{data}}</text>
+                </block>
+              </text>
+            </view>
+          </block>
+    
+          <!--图片显示的内容  -->
+          <block wx:if="{{}}">
+            <view class="imgArea">
+              <text class="imgText">{{goodInfo.imgsArr.name}}</text>
+              <view class="imgWrap">
+                <block wx:for="{{goodInfo.imgsArr.data}}" wx:for-item="diyImg" wx:key="*this">
+                  <image src="{{diyImg}}"></image>
+                </block>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+  </view>
+</template>

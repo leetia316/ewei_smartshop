@@ -1,0 +1,5 @@
+<template name="showtoast">
+  <modal hidden="{{toastitem.hidden}}"  confirm-text="确定" bindconfirm="toastconfirm" no-cancel="{{true}}">
+    {{toastitem.title}}
+  </modal>
+</template>

@@ -1,0 +1,59 @@
+@import "../../order_item_template/order_item_template.less";
+.myOrderListWrap{
+  box-sizing:border-box;
+  background-color:#fff;
+  margin-bottom:20rpx;
+  &:last-child{
+    margin-bottom: 0;
+  }
+  .orderStatusTitle,.payInfo{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    height: 98rpx;
+    line-height: 98rpx;
+    font-size: 28rpx;
+    padding: 0 22rpx;
+    color: @titleFontColor;
+  }
+  .orderStatusTitle{
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-justify-content: space-between;
+    .orderSnTitle{
+      color: @titleFontColor;
+      font-size: 28rpx;
+    }
+    .orderSnNum{
+      color: @fontColor;
+      font-size: 28rpx;
+    }
+    .orange{
+      color: @strongOrangeColor;
+    }
+  }
+  .payInfo{
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+            -webkit-justify-content: flex-end;
+    >text{
+      font-size: 28rpx;
+    }
+    .num{
+      &.orange{
+        color: @strongOrangeColor;
+      }
+    }
+    .money{
+      margin-left: 10rpx;
+      color: #FA6464;
+    }
+  }
+  .buttonsWrap{
+     padding: 18rpx 24rpx 20rpx 0;
+     border-top: @line;
+   }
+}

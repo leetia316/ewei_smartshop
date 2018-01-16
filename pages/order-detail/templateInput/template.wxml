@@ -1,0 +1,8 @@
+<template name="iteminput" wx:if="{{item.data_type==9}}">
+  <view class="inputitem" wx:if="{{item.data_type==9}}">
+    <view class="inputholder" wx:if="{{isAddress}}">
+      <view class="title">{{title}}</view>
+      <input class="input" data-index="{{item.diyformkey}}" id="{{title}}" placeholder="{{address}}" focus="{{focus}}" bindfocus="openModal" value="{{address}}"/>
+    </view>
+  </view>
+</template>

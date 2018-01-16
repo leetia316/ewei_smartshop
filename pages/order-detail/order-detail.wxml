@@ -1,0 +1,258 @@
+<!--pages/order-detail/order-detail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<import src="templateInput/template.wxml"/>
+<import src="modle/modle.wxml"/>
+<view class="contain" style="{{orderShow === true? 'position:fixed;top:0;left:0;bottom:0;right:0':''}}">
+    <swiper indicator-dots="{{indicatorDots}}"  interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}">
+            <swiper-item>
+                <image src="{{item}}" class="slide-image" width="100%" height="200"  />
+            </swiper-item>
+        </block>
+    </swiper>
+    <!--加载数据  -->
+    <view class="detail_top">
+        <view class="order_view">
+            <view class="order_title">{{title}}</view>
+            <view class="smail_title">{{subtitle}}</view>
+            <view class="money_view">
+                <view class="minprice">¥{{minprice}}</view>
+                <view class="productprice" style="{{productprice<=0? 'display:none':''}}">¥{{productprice}}</view>
+            </view>
+            <view class="express_sales">
+                <view class="express">快递：{{dispatchprice}}</view>
+                <view class="sales">销量：{{sales}}{{unit}}</view>
+            </view>
+        </view>
+        <view class="border_check" style="{{quality <= 0 && repair <= 0 && seven <= 0 && other_services<=0? 'display:none':''}}">
+            <view class="check_view">
+                <view class="guaranteed_view" style="{{quality <= 0?'display:none':''}}">
+                    <image mode="aspectFit" src="../../images/imgIndex/check.png"></image>
+                    <view class="guaranteed_warranty">正品保证</view>
+                </view>
+                <view class="invoice_view" style="{{repair <= 0?'display:none':''}}">
+                    <image mode="aspectFit" src="../../images/imgIndex/check.png"></image>
+                    <view class="invoice">保修</view>
+                </view>
+                <view class="days_return" style="{{seven <= 0?'display:none':''}}">
+                    <image mode="aspectFit" src="../../images/imgIndex/check.png"></image>
+                    <view class="return">7天退换</view>
+                </view>
+                <view class="days_return self_view" wx:for="{{other_services}}">
+                    <image mode="aspectFit" src="../../images/imgIndex/check.png"></image>
+                    <view class="return">{{item}}</view>
+                </view>
+            </view>
+        </view>
+
+        <view class="choose_view" catchtap="getorderContent" style="{{spectitle?'':'display:none'}}">
+            <view class='title_choose'>已选：</view>
+            <view class="titlespec" data-optionid="{{optionid}}"><view class="wordtitle">{{spectitle.title}}</view>
+                <image mode="aspectFit" src="../../images/imgIndex/right.png"></image>
+            </view>
+        </view>
+        <view class="choose_view" catchtap="getorderContent" style="{{spectitle?'display:none':''}}">
+            <view class='title_choose'>请选择</view>
+            <view class="size_view" wx:for="{{specs}}">{{item.title}}</view>
+            <image mode="aspectFit" src="../../images/imgIndex/right.png"></image>
+        </view>
+        <view class="logo_view">
+            <image mode="aspectFit" src="{{logo}}"></image>
+            <view class="logo_word">{{shopname}}</view>
+        </view>
+        <view class='detail_view'>
+            <view class='border'>
+                <image mode="aspectFit" src='../../images/imgIndex/Rectangle.png'></image>
+            </view>
+            <image class='logo_wximg' src='../../images/imgIndex/Shape.png'></image>
+            <view class='view_words'>详情</view>
+            <view class='border_right'>
+                <image mode="aspectFit" src='../../images/imgIndex/Rectangle.png'></image>
+            </view>
+        </view>
+        <view class="wxParse">
+            <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+        </view>
+
+        <!--fixed购物车  -->
+        <view class='cart_view'>
+            <view class='cart_img' bindtap="getonCart">
+                <image mode="scaleToFill" src='../../images/imgIndex/cart.png'></image>
+            </view>
+            <view class='num_view' style="{{num>0?'display:block':''}}">{{num}}</view>
+            <button class='cart_btn' data-type="0" catchtap="getorderContent">加入购物车</button>
+            <button class='buy_btn' data-type="1" catchtap="getorderContent">购买</button>
+        </view>
+    </view>
+
+
+    <!--商品详情信息弹出层  -->
+    <view class="{{orderShow?'order_layer_show':'order_layer'}}" bindtap='hideLayer'wx:for="{{ditform}}}"  catchtouchmove='noScrollMove'>
+
+    </view>
+    <view class="{{orderShow?'order_contents_show':'order_contents'}}"  >
+        <view class="goods_view">
+            <view class="goods_title">
+                <view class="goods_img">
+                    <image mode="scaleToFill" src="{{thumb}}"></image>
+                </view>
+                <view class="all_view">
+                    <block wx:if="{{minprice==maxprice}}">
+                        <view class="all_price">{{minprice}}</view>
+                    </block>
+                    <block wx:else>
+                        <view class="all_price">{{minprice}}~{{maxprice}}</view>
+                    </block>
+                    <view class="all_total" data-hasoption="{{hasoption}}">库存{{total}}件</view>
+
+                    <block wx:for="{{specsitem}}" wx:key="id" wx:for-item="spec">
+                        <view class="specstyle_view">
+                            <view class="style_specs" style="{{spectitle.title?'display:none':''}}">
+                                <view class="models" data-optionid="{{optionid}}">{{spec.title}}</view>
+                            </view>
+                        </view>
+                    </block>
+                    <view class="hasmodels models" data-item_active="{{specItemIds}}" data-optionid="{{optionid}}" style="{{spectitle.title?'':'display:none'}}"><view class="modelstitle">已选：{{spectitle.title}}</view>
+
+                    </view>
+
+                </view>
+            </view>
+        </view>
+
+        <!--规格  -->
+        <view class="specs_All" data-item_data="{{diyformfields}}" style="{{specsitem.length ===0 && diyformfields.length ===0 ?'height:200rpx;':'height:765rpx'}}">
+            <view class="color_view">
+                <view class="color_specs" wx:for="{{specsitem}}" wx:key="id" wx:for-item="spec">
+                    <view class='color_title' data-index="{{spec.id}}">{{spec.title}}：</view>
+                    <view class="aiai">
+                        <view wx:for="{{spec.items}}" wx:key="id" wx:for-item="item"
+                              class="{{item.id == specSelectedItem[spec.id]? 'active' : 'color_count'}}" data-item_id="{{item.id}}"
+                              data-spec_id="{{spec.id}}" catchtap="onClicklist">{{item.title}}</view>
+                    </view>
+                </view>
+            </view>
+            <!--自定义表单  -->
+            <view class="diyform">
+                <block wx:for="{{diyformfields}}" wx:for-index="idx" class="{{diyformfields == ''?'display:none':''}}">
+                    <view class="self_border">
+                        <view class="self_text" wx:if="{{item.data_type==0}}">
+                            <label>{{item.tp_name}}：</label>
+                            <input type='text' placeholder="请输入{{item.tp_name}}" value="" data-type="{{item.data_type}}" placeholder-style="color:#ccc; font-size:26rpx;" data-index="{{item.diyformkey}}" bindinput="bindblurDan" data-item="{{markTrue}}" style="{{markTrue === true? 'color:#808080':''}}"/>
+                        </view>
+                    </view>
+                    <view class="card_border">
+                        <view class="self_card" wx:if="{{item.data_type==6}}">
+                            <label>{{item.tp_name}}：</label>
+                            <input type='text' maxlength="18" placeholder="请输入身份证" placeholder-style="color:#ccc; font-size:26rpx;" value="" data-type="{{item.data_type}}" data-index="{{item.diyformkey}}" bindinput="bindblurCode" data-item="{{markTrue}}" style="{{markTrue === true? 'color:#808080':''}}"/>
+                        </view>
+                    </view>
+
+                    <view class="check_view_box" wx:if="{{item.data_type==3}}">
+                        <view class="check_item">{{item.tp_name}}：</view>
+                        <checkbox-group class="label_view" data-type="{{item.data_type}}" data-index="{{item.diyformkey}}" bindchange="checkboxChange">
+                            <label class="checkbox" wx:for="{{item.tp_text}}">
+                                <checkbox class="checkbox_view" value="{{item}}"/>{{item}}
+                            </label>
+                        </checkbox-group>
+
+                    </view>
+                    <view class="section_view">
+                        <view class="section xialasection" wx:if="{{item.data_type==2}}">
+                            <view class="section__title tp_textxia">{{item.tp_name}}：</view>
+                            <picker class="picktext" data-type="{{item.data_type}}" data-index="{{item.diyformkey}}" bindchange="bindPicker" value="{{xialaArray[xialaindex]}}" range="{{xialaArray}}">
+                                <view class="picker" data-item="{{pickerTrue}}" style="{{pickerTrue === true? 'color:#808080':''}}">
+                                    {{xialaArray[xialaindex]}}
+                                </view>
+                            </picker>
+                        </view>
+                    </view>
+                    <view class="section_view">
+                        <view class="section" wx:if="{{item.data_type==7}}">
+                            <view class="section__title">{{item.tp_name}}：</view>
+                            <picker mode="date" value="{{date1}}" start="" end="" data-type="{{item.data_type}}" data-index="{{item.diyformkey}}" bindchange="bindDateChange">
+                                <view class="picker" data-item="{{markTrue}}" style="{{markTrue === true? 'color:#808080':''}}">{{date1}}</view>
+                            </picker>
+                        </view>
+                    </view>
+                    <view class="section_view">
+                        <view class="section" wx:if="{{item.data_type==8}}">
+                            <view class="section__title" style="display: inline-block;">{{item.tp_name}}：</view>
+                            <picker mode="date" value="{{date2}}" start="" end="" data-type="{{item.data_type}}" data-index="{{item.diyformkey}}" bindchange="onDateChange" style="display: inline-block;">
+                                <view class="picker starttimer" data-item="{{startTrue}}" style="{{startTrue === true? 'color:#808080':''}}">{{date2}}</view>
+                            </picker>
+                            <view class="borderline" style="{{endTrue === true? 'left:86rpx':''}}"></view>
+                            <picker style="display: inline-block;" mode="date" value="{{date3}}" start="" end="" data-type="{{item.data_type}}" data-index="{{item.diyformkey}}" bindchange="onDateChangeEnd">
+                                <view class="picker" data-item="{{endTrue}}" style="{{endTrue === true? 'color:#808080':''}}">{{date3}}</view>
+                            </picker>
+                        </view>
+                    </view>
+
+                    <!--<view class="section" wx:if="{{item.data_type==8}}" style="display: inline-block;">-->
+                    <!--<picker mode="date" value="{{date3}}" start="2016-09-01" end="2017-09-15" data-index="{{item.diyformkey}}" bindchange="onDateChangeEnd">-->
+                    <!--<view class="picker">{{date3}}</view>-->
+                    <!--</picker>-->
+                    <!--</view>-->
+                    <!--城市  -->
+                    <!--<template wx:if="{{item.data_type==9}}" data-index="{{item.diyformkey}}" is="iteminput" data="{{...chooseCity}}"/>-->
+                    <view class="section_view">
+                        <view class="section" wx:if="{{item.data_type==9}}">
+                            <view class="section__title">{{item.tp_name}}：</view>
+                            <picker mode="region" data-index="{{item.diyformkey}}" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+                                <view class="picker" data-item="{{regionTrue}}" style="{{regionTrue === true? 'color:#808080':''}}">
+                                    {{region[0]}}，{{region[1]}}
+                                </view>
+                            </picker>
+                        </view>
+                    </view>
+
+                    <view class="photo_border">
+                        <view class="photo_view" wx:if="{{item.data_type==5}}">
+                            <view class='photo'>{{item.tp_name}}：</view>
+                            <view class="tupian" wx:for="{{item.photoList}}" wx:for-item="photoUrl" wx:for-index="photoIndex">
+                                <image mode="aspectFit" src="{{photoUrl}}" style="display: inline-block;"></image>
+                                <view class="del_view">
+                                    <image mode="aspectFit" src="../../images/imgIndex/delete.png" bindtap="onDelete"
+                                           data-id="{{idx}}" data-photo="{{photoIndex}}"></image>
+                                </view>
+                            </view>
+                            <view class="tupian" wx:if="{{item.tp_max > item.photoList.length}}" data-index="{{item.diyformkey}}" data-id="{{idx}}" bindtap="onChangePhoto">
+                                <image mode="aspectFit"
+                                       src="{{item.photoList.length === 0 ? '../../images/imgIndex/photo01.png' : '../../images/imgIndex/photo02.png'}}">
+                                </image>
+                            </view>
+                        </view>
+                    </view>
+
+                </block>
+
+            </view>
+
+            <!--数量  -->
+            <view class='num_views'>
+                <view class='count'>数量：</view>
+                <view class='add_minus'>
+                    <!-- 减号 -->
+                    <view class="normal" data-index="{{index}}" bindtap="bindMinus" data-cartid="{{item.id}}">
+                        <image mode="aspectFit" src="../../images/imgIndex/jian.png"></image>
+                    </view>
+                    <!-- 数值 -->
+                    <input type="number" bindchange="bindManual" value="{{Nums}}" bindblur="inputNum"/>
+                    <!-- 加号 -->
+                    <view class="normal_jia" data-index="{{index}}" bindtap="bindPlus" data-cartid="{{item.id}}">
+                        <image mode="aspectFit" src="../../images/imgIndex/jia.png"></image>
+                    </view>
+                </view>
+
+            </view>
+            <!--确定按钮  -->
+            <view class="botton_view" bindtap="onClickBtn">确定</view>
+        </view>
+
+    </view>
+
+    <view wx:if="{{condition}}" class="city">
+        <template is="selectaddress" data="{{provinces,citys}}"/>
+    </view>
+
+</view>

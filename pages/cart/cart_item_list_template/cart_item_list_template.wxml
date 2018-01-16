@@ -1,0 +1,36 @@
+<import src="../cart_item_template/cart_item_template.wxml" />
+<template name="cartItemListTemplate">
+    <!--店铺商品-->
+    <block>
+        <view class="cartItemListWrap">
+            <view class="cartShopTitle cartTitle">
+                <view class="left">
+                    <icon type="success" color="#D0D0D0" size="15"></icon>
+                    <text class="shopName cartCategoryName">銵喽小铺</text>
+                </view>
+                <view class="getCoupon">领券</view>
+            </view>
+            <block>
+                <template is="cartItemTemplate"></template>
+            </block>
+        </view>
+    </block>
+    <!--失效商品-->
+    <block>
+        <view class="disabledCartListWrap">
+            <view class="disabledCartTitle cartTitle">
+                <view class="left">
+                    <text class="circle"></text>
+                    <text class="shopName cartCategoryName">失效商品</text>
+                </view>
+                <view class="right">
+                    <image class="clearIcon" src="/images/user/clearIcon.png"></image>
+                    <text>清空</text>
+                </view>
+            </view>
+            <block>
+                <template is="cartItemTemplate" data="{{disabled:true}}"></template>
+            </block>
+        </view>
+    </block>
+</template>

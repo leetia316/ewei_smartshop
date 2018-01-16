@@ -1,0 +1,82 @@
+/* index.wxss */
+@import '../commonview/iteminput/index.wxss';
+@import '../commonview/selectaddress/index.wxss';
+
+.holder {
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  flex-direction: column;
+  background-color: #f6f6f6;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+}
+
+.holder .linestyle {
+  height: 10px;
+}
+
+.citypicker {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.holder .saveholder {
+  height: 50px;
+  margin-top: 42px;
+  margin-left: 13px;
+  margin-right: 13px;
+  background: #ff9c00;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /* 子元素水平居中 */
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  /*  子元素垂直居中*/
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.holder .savetext {
+  color: #fff;
+  font-size: 16px;
+}
+
+.holder .deleteholder {
+  height: 50px;
+  margin-top: 21px;
+  margin-left: 13px;
+  margin-right: 13px;
+  background: #fff;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /* 子元素水平居中 */
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  /*  子元素垂直居中*/
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.holder .deletetext {
+  color: #999;
+  font-size: 16px;
+}

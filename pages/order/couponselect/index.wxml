@@ -1,0 +1,20 @@
+<import src="../commonview/itemcoupon/index.wxml"/>
+
+<view class="holder"> 
+
+  <!--数据为空的显示 -->
+  <view wx:if="{{dataList.length == 0}}" class="noContentWrap">
+    <image class="noContentImg" src="/images/user/coupon.png"></image>
+    <text class="noContentText">您还没有优惠券</text>
+  </view>
+  <view wx:else> 
+    <template is="itemcoupon" data="{{dataList}}"/>
+    <view class="emptyview">
+      <!-- <text class='textview'>没有更多了</text> -->
+    </view>
+    <view class="buttoncoupon" bindtap="disuseCoupon">
+      <text class="coupontext">不使用优惠券</text>
+    </view>
+  </view>
+
+</view> 

@@ -1,0 +1,115 @@
+/*基本色*/
+/*title 样式*/
+.title {
+  font-size: 32rpx;
+  color: #333333;
+  line-height: 45rpx;
+}
+/*像user那一条一条的带图片右箭头的item*/
+.user_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  height: 98rpx;
+  line-height: 98rpx;
+  padding-left: 25rpx;
+  padding-right: 20rpx;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+.user_item .left image {
+  width: 42rpx;
+  height: 42rpx;
+  margin-right: 19rpx;
+  vertical-align: top;
+  margin-top: 28rpx;
+}
+.user_item .rightArrow {
+  display: inline-block;
+  height: 18rpx;
+  width: 18rpx;
+  box-sizing: border-box;
+  border-right: 5rpx solid #C7C7CC;
+  border-top: 5rpx solid #C7C7CC;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-top: 40rpx;
+}
+/*按钮*/
+.buttonsWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
+}
+.buttonsWrap > button {
+  font-size: 28rpx;
+  border-radius: 6rpx;
+  width: 160rpx;
+  height: 70rpx;
+  padding: 0;
+  margin: 0;
+}
+.buttonsWrap > button:after {
+  border: none;
+}
+.buttonsWrap .canleBtn {
+  color: #666666;
+  border: 1px solid #666666;
+  margin-right: 20rpx;
+  box-sizing: border-box;
+}
+.buttonsWrap .payBtn {
+  background-color: #ff9c00;
+  color: #fff;
+}
+.buttonsWrap .sureBtn {
+  color: #ff9c00;
+  border: 1px solid #ff9c00;
+  box-sizing: border-box;
+}
+/*没有更多*/
+.noMore {
+  font-size: 24rpx;
+  color: #999999;
+  text-align: center ;
+}
+/*右箭头*/
+.arrowArr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-items: center;
+}
+/*下箭头*/
+/*上箭头*/
+/*省略号*/
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

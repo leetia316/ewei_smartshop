@@ -1,0 +1,80 @@
+<!--index.wxml-->
+<import src="../template/template.wxml"/>
+    <view class="container">
+       
+    <!--搜索框  -->
+    <view class="search_box">
+        <view class="search">
+            <image src="../../images/imgIndex/search_c.png"></image>
+            <navigator url="/pages/search/search" class="search-input" hover-class="navigator-hover"><text>搜索商品</text></navigator>
+        </view>
+    </view>
+    <view class="index-nav">
+        <view bindtap="onClickTap" class="istime">
+            <view class="index-img">
+                <image mode="aspectFit" src="../../images/imgIndex/timer_c.png"></image>
+            </view>
+            <view class="timer-shop">
+                <text>限时抢购</text>
+            </view>
+        </view>
+        <view  bindtap="onClickCoupon" class="coupon">
+            <view class="index-img02">
+                    <image src="../../images/imgIndex/give_c.png"></image>
+            </view>
+            <view class="coupon">
+                <text>领优惠券</text>
+            </view>
+        </view>
+        <view bindtap="onClickOrder" class="myorder">
+            <view class="index-img03">
+                <image mode="aspectFit" src="../../images/imgIndex/my_order.png"></image>
+            </view>
+            <view class="me-order">
+                <text>我的订单</text>
+            </view>
+        </view>
+        <view  bindtap="onClickAll" class="all">
+            <view class="index-img04">
+                <image mode="aspectFit" src="../../images/imgIndex/all_c.png"></image>
+            </view>
+            <view class="all-things">
+                <text>全部商品</text>
+            </view>
+        </view>
+
+    </view>
+    <view class="isring">
+        <view class="index-img05">
+            <image mode="aspectFit" mode="aspectFit" src="../../images/imgIndex/tj.png"></image>
+        </view>
+        <!--商品标题  -->
+        <view class="merchandise">
+            <text class="merch">商品推荐</text>
+        </view>
+    </view>
+    <!--加载接口数据  -->
+    <view class="count-list">
+         <!--navigator跳转  -->
+         <navigator class="pr" wx:for="{{goodsList}}" url="../order-detail/order-detail?id={{item.id}}" hover-class="navigator-hover">
+             <!--图片  -->
+             <image class="photo" src="{{item.thumb}}"></image>
+             <view class="view_boxer">
+                 <view class="title">{{item.title}}</view>
+                 <!-- 价格 -->
+                 <view class="price_price">
+                     <view class="gmxx" style="{{item.productprice <=0? 'display:none':''}}">¥{{item.productprice}}</view>
+                     <view class="gmx" style="{{item.productprice <=0? 'margin-left:0':''}}">¥{{item.minprice}}</view>
+                 </view>
+             </view>
+        </navigator>
+
+    </view>
+
+     <view class="tutu_img">
+        <image src="../../images/imgIndex/tututu.gif" style="{{goodsList.length == 10?'':'visibility: hidden'}}"></image>
+        <view class="no_more" wx:if="{{showNoMore}}">没有更多了</view>
+     </view>
+</view>
+<template wx:if="{{!userGetSetting}}" is="unauth"></template>
+

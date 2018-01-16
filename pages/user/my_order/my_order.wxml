@@ -1,0 +1,33 @@
+<!--pages/user/my_order/my_order.wxml-->
+<import src="my_order_list_template/my_order_list_template.wxml" />
+<view class="myOrderContainer">
+  <scroll-view class="stepsWarp" scroll-x="true">
+    <block wx:for="{{steps}}" wx:for-item="step" wx:key="status">
+      <text class="{{status === step.status ? 'step active': 'step'}}" data-status="{{step.status}}" catchtap='onStepTap'>{{step.title}}</text>
+    </block>
+  </scroll-view>
+  <view wx:if="{{dataBackFlag && orderList.length != 0}}">
+    <block wx:for="{{orderList}}" wx:for-item="order" wx:key="id">
+      <template is="myOrderListTemplate" data="{{...order}}"></template>
+    </block>
+    <!-- 取消原因 -->
+  </view>
+   <view class="reasonModelArea">
+      <view class="mask" catchtap="hideModal" catchtouchmove='noScrollMove' wx:if="{{showModalStatus}}"></view>
+      <view animation="{{animationData}}" catchtouchmove='noScrollMove' class="reasonModel" wx:if="{{showModalStatus}}">
+        <view class='btns'>
+          <view class='cancelBtn btn' catchtap="hideModal">取消</view>
+            <view class='sureBtn btn' wx:if="{{cancelreason != ''}}" catchtap='onCancelSureTap'>确定</view>
+          <view class='noTapSureBtn btn' wx:else>确定</view>
+        </view>
+        <view class='reasons' wx:for="{{reasons}}" wx:for-item="reason" wx:key="*this">
+          <view class="{{cancelreason == reason? 'blue':''}}" data-cancelReason='{{reason}}' catchtap='onCancelReasonTap'>{{reason}}</view>
+        </view>
+      </view>
+    </view>
+  <view wx:if="{{dataBackFlag && orderList.length == 0}}" class="noContentWrap">
+    <image class="noContentImg" src="/images/user/order.png"></image>
+    <text class="noContentText">暂时没有任何订单</text>
+    <button class="lookAround" catchtap='toIndexTap'>到处逛逛</button>
+  </view>
+</view>

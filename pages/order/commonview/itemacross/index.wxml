@@ -1,0 +1,28 @@
+<template name="itemacross">
+
+  <view class="acrossholder">
+    <view class="left"  wx:if="{{showArrow}}"> 
+      <text class='titlestyle'>{{fistName}}</text>
+    </view>
+    <view class="left"  wx:else> 
+      <text class='titlestyleTwo'>{{fistName}}</text>
+    </view>
+
+    <view >
+      <view class="rightholder" wx:if="{{showArrow}}"> 
+        <text class="righttext">{{lastContent}}</text>
+      </view>
+      <view class="rightholder" wx:else bindtap="gotoChooseCoupon">  
+        <text class="righttext">{{lastone}}</text>
+        <block wx:if="{{lasttwo.length >12}}">
+          <text class="righttexttwoA" >{{lasttwo}}</text>
+        </block>
+        <block wx:else>
+          <text class="righttexttwo">{{lasttwo}}</text>
+        </block>
+        <text class="righttext">{{lastthree}}</text>
+        <image class="righticon" src="/images/common/arrow_right.png"></image>
+      </view>
+    </view>
+  </view>
+</template>

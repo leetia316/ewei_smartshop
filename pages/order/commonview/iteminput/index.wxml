@@ -1,0 +1,9 @@
+<template name="iteminput">
+  <view class="inputholder">
+    <text class="title">{{title}}</text>  
+    <input class="input" id="{{title}}" placeholder-style="color:#999999" bindinput="valueInput" placeholder="{{hint}}" value="{{leaveMessage}}" focus="{{focus}}" maxlength='50'/> 
+    <view wx:if="{{leaveMessage != ''}}" class="clearicon" bindtap="clearInputContent">
+      <image class="icon" src='/images/common/clear_icon.png'></image>
+    </view>
+  </view>
+</template>

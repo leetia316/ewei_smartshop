@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<import src="../commonview/iteminput/index.wxml"/>
+<import src="../commonview/selectaddress/index.wxml"/>
+
+<view class="holder"> 
+  <view class="linestyle"/>
+  <template is="iteminput" data="{{...receiverItem}}"/>    
+  <template is="iteminput" data="{{...phoneItem}}"/>  
+  <template is="iteminput" data="{{...districtItem}}"/>  
+  <template is="iteminput" data="{{...addressItem}}"/>  
+
+  <view class='saveholder' bindtap="saveAddress">
+    <text class='savetext'>保存地址</text>
+  </view>
+
+</view> 
+
+<view wx:if="{{condition}}" class="citypicker">
+  <template is="selectaddress" data="{{provinces,citys,countys}}"/>  
+</view>

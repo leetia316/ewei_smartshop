@@ -1,0 +1,544 @@
+/*总布局  */
+
+.itemholder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.itemholder .slideholder {
+  position: relative;
+  flex-direction: column;
+  height: 210rpx;
+   /* background-color: #009900;  */
+}
+
+/*横隔  */
+
+.itemholder .lineStyle {
+  margin-left: 39px;
+  height: 1rpx;
+  background-color: #E6E6E6; 
+}
+
+/*单个item布局  */
+
+.itemholder .cartItemContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 210rpx;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  /*子元素垂直对齐  */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/* 是否选中的圆圈 */
+
+.cartItemContent .circleholder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -ms-flexbox;
+  width: 39px;
+  align-self: center;
+  /*子元素水平居中  */
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  /*  子元素垂直居中*/
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/*圆圈  */
+
+.circleholder .circle {
+  width: 15px;
+  height: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 3px;
+  padding-right: 4px;
+}
+
+/*商品图片  */
+
+.cartItemContent .cartItemImgWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 160rpx;
+  height: 160rpx;
+  justify-content: center;
+  align-self: center;
+}
+
+/*图片  */
+.cartItemImgWrap .cartItemImg {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 4rpx;
+}
+
+/*商品介绍容器  */
+.cartItemContent .cartItemInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-left: 2%;
+  align-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  /*子元素占据剩余的空间  */
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 382rpx;
+  height: 210rpx;
+    /* background-color: #008899;   */
+}
+
+.cartItemInfo .cartItemTitle {
+  color: #333;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  word-break: break-all;
+  width: 320rpx;
+  margin-top: 28rpx;
+}
+
+.cartItemInfo .cartItemDesc {
+  color: #999;
+  font-size: 22rpx;
+  word-break: break-all;
+  margin-top: 14rpx;
+  width: 320rpx;
+  /*显示两行文字多余的自动加。。。  */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.cartItemInfo .cartItemDescNone {
+  margin-top: 14rpx;
+  height: 20px;
+}
+
+.cartItemInfo .cartItemMoney {
+  color: #fa6464;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}
+
+/*商品数量控制容器  */
+
+.cartItemContent .numControl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 92%;
+  width: 50px;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  /*子元素水平居中  */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  /*  */
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+
+  /* background-color: #fa6464; */
+}
+
+/*数量控制加  */
+
+.numControl .plusImgHolder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /*子元素垂直居中  */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  /*子元素水平居中  */
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  flex: 1;
+  width: 50px;
+  /* background-color: #fa6400; */
+}
+
+.plusImgHolder .plusImg {
+  width: 10px;
+  height: 30px;
+}
+
+.numControl .numholder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex: 1;
+  /*子元素水平居中  */
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  /*  子元素垂直居中*/
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.numholder .num {
+  color: #333333;
+  font-size: 11px;
+  text-align: center;
+  /* background-color: #000999; */
+}
+
+/*减数据  */
+
+.numControl .minusImgHolder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex: 1;
+  /*子元素垂直居中  */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  /*子元素水平居中  */
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 50px;
+}
+
+.minusImgHolder .minusImg {
+  width: 10px;
+  height: 30px;
+}
+
+/*删除数据容器  */
+
+.slideholder .deleteholder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 4;
+  right: 0;
+  right: -80px;
+}
+
+.deleteholder .deleteimage {
+  width: 80px;
+  height: 100%;
+}
+
+/*失效商品的样式  */
+
+.itemholder .expireListHolder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  height: 105px;
+  /* width: 98%; */
+  justify-content: center;
+  /* align-items: center; */
+  /* background-color: #fa6464; */
+
+    /*子元素垂直居中  */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/*圆圈的容器  */
+
+.expireListHolder .expirecircleholder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 39px;
+  /*子元素垂直居中  */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  /*子元素水平居中  */
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.expirecircleholder .circle {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 1rpx solid #d0d0d0;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+/*商品图片容器样式  */
+
+.expireListHolder .goodsImageHolder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 160rpx;
+  height: 160rpx;
+  position: relative;
+  /* margin-right: 28rpx;
+  width: 160rpx;
+  height: 160rpx; */
+}
+
+/* 商品图片 */
+.goodsImageHolder .cartItemImg {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 4rpx;
+}
+
+.goodsImageHolder .outUse {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 40rpx;
+  line-height: 40rpx;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.goodsImageHolder .mask {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/*商品描述容器  */
+
+.expireListHolder .descripHolder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-left: 2%;
+  width: 380rpx;
+  /* flex 布局填充控件 */
+   -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  /* background-color: #009900;  */
+}
+
+.descripHolder .cartItemTitle {
+  color: #999;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.descripHolder .cartItemDesc {
+  color: #999;
+  font-size: 14px;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  margin-top: 4px;
+}
+
+.descripHolder .cartItemDescNone {
+  margin-top: 4px;
+  height: 20px;
+}
+
+.descripHolder .cartItemMoney {
+  color: #999;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/*数据显示容器  */
+
+/* .expireListHolder .numControl {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex: 0 0 50px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.numControl .num{
+   color: #999;
+  font-size: 14px;
+} */
+
+
+/*商品数量控制容器  */
+
+.expireListHolder .numControl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 92%;
+  width: 50px;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  /*子元素水平居中  */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  /*  */
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+/*数量控制加  */
+
+.numControl .plusImgHolder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /*子元素垂直居中  */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  /*子元素水平居中  */
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.plusImgHolder .plusImg {
+  width: 10px;
+  height: 30px;
+}
+
+.numControl .numholder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex: 1;
+  /*子元素水平居中  */
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  /*  子元素垂直居中*/
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.numholder .numn {
+  color: #999999;
+  font-size: 11px;
+  text-align: center;
+}
+
+/*减数据  */
+
+.numControl .minusImgHolder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex: 1;
+  /*子元素垂直居中  */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  /*子元素水平居中  */
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.minusImgHolder .minusImg {
+  width: 10px;
+  height: 30px;
+}

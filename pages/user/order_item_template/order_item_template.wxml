@@ -1,0 +1,15 @@
+<template name="orderItemTemplate">
+  <view class="orderItemWrap">
+    <image class="orderItemImg"  src="{{thumb}}"></image>
+    <view class="orderItemInfo info">
+      <text class="orderItemTitle title">{{title}}</text>
+      <text class="orderItemCategory subDes">{{optiontitle}}</text>
+    </view>
+    <view class="orderItemPayInfo info">
+      <text class="orderItemPayMoney title">¥ {{price}}</text>
+      <text class="orderItemPayNum subDes">×{{total}}</text>
+     <text class="helpRight" wx:if="{{refund_status == 1 || refund_status == 2 || refund_status == 5 || (refundid > 0 && refundstate > 0)}}" catchtap="onHelpRightTap">维权中</text> 
+      <text class="helpRight" wx:if="{{refund_status == 3 || refund_status == 4}}">维权完成</text>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,49 @@
+<!--user.wxml-->
+<import src="../template/template.wxml"/>
+<view class="userContainer">
+  <view class="userBanner">
+    <image class="bannerBgImg" src="/images/user/userBannerBg.png"></image>
+    <view class="userInfo">
+      <image class="avatar" src="{{userInfo.avatar}}"></image>
+      <view class="nickname">{{userInfo.nickname}}</view>
+    </view>
+  </view>
+  <view class="userPropertyInfo">
+    <view class="yuEe">
+      <view class="title">余额</view>
+      <view class="red num">{{userInfo.credit2}}</view>
+    </view>
+    <view class="separateLine"></view>
+    <view class="jiFen">
+      <view class="title">积分</view>
+      <view class="blue num">{{userInfo.credit1}}</view>
+    </view>
+  </view>
+  <navigator url="my_order/my_order" class="user_myOrder user_item">
+    <view class="left">
+      <image src="/images/user/userIcon_myOrder.png" ></image>
+      <text class="title">我的订单</text>
+    </view>
+    <view class="right">
+      <text>查看全部订单</text>
+      <view class="rightArrow"></view>
+    </view>
+  </navigator>
+  <view class="user_coupon">
+    <navigator url="get_coupon/get_coupon" class="user_getCoupon user_item">
+      <view class="left">
+        <image src="/images/user/userIcon_getCoupon.png" ></image>
+        <text class="title">领取优惠券</text>
+      </view>
+      <view class="rightArrow"></view>
+    </navigator>
+    <navigator url="my_coupon/my_coupon" class="user_myCoupon user_item">
+      <view class="left">
+        <image src="/images/user/userIcon_myCoupon.png" ></image>
+        <text class="title">我的优惠券</text>
+      </view>
+      <view class="rightArrow"></view>
+    </navigator>
+  </view>
+</view>
+<template wx:if="{{!userGetSetting}}" is="unauth"></template>

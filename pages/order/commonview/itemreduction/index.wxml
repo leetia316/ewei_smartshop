@@ -1,0 +1,13 @@
+<template name="itemreduction">
+  <view class="itemreduction">
+     <view class="reductionleft" > 
+      <text class='titlestyle'>{{fistName}}</text>
+      <text class='titlestyleTwo'> {{fistMoney}} </text>
+      <text class='titlestyle'>{{fistEnd}}</text>
+    </view>
+    <view class="rightholder" > 
+      <text class="righttext">{{lastContent}}</text>
+    </view> 
+  </view>
+
+</template>
